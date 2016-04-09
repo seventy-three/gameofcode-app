@@ -12,21 +12,21 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class GeoJsonParser {
 
     public static final boolean LOAD_FROM_WEB = false;
-    public static final boolean LOAD_FROM_ASSET = true;
+    public static final boolean LOAD_FROM_ASSET = false;
     public static final String BASE_URL = "http://opendata.vdl.lu/odaweb/";
     public static final String URL_LIST = BASE_URL + "?describe=1";
     public static final String URL_ITEM = BASE_URL + "?cat=";
@@ -39,7 +39,7 @@ public class GeoJsonParser {
         gsonBuilder.registerTypeAdapter(geoJsonDataType, new GeoJsonDeserializer());
         Type geoJsonItemPathType = new TypeToken<List<GeoJsonItemPath>>() {}.getType();
         gsonBuilder.registerTypeAdapter(geoJsonItemPathType, new GeoJsonItemPathDeserializer());
-        Type geoJsonItemPlaceType = new TypeToken<List<GeoJsonItemPlace>>() {}.getType();
+        Type geoJsonItemPlaceType = new TypeToken<List<GeoJsonItem>>() {}.getType();
         gsonBuilder.registerTypeAdapter(geoJsonItemPlaceType, new GeoJsonItemPlaceDeserializer());
 
         Gson gson = gsonBuilder.create();
@@ -52,11 +52,11 @@ public class GeoJsonParser {
 
             switch (geoData.getType()) {
                 case BUS_LINE:
-                    geoData.setItems(gson.fromJson(itemData, geoJsonItemPathType));
+                    geoData.setItems((List<? extends GeoJsonItem>) gson.fromJson(itemData, geoJsonItemPathType));
                     System.out.println("Ok");
                     break;
                 case BIKE_ROAD:
-                    geoData.setItems(gson.fromJson(itemData, geoJsonItemPathType));
+                    geoData.setItems((List<? extends GeoJsonItem>) gson.fromJson(itemData, geoJsonItemPathType));
                     System.out.println("Ok");
                     break;
                 case OUTSIDE_PARKING:
@@ -67,7 +67,7 @@ public class GeoJsonParser {
                 case BIKE_PARKING:
                 case PARK_AND_BIKE:
                 case FUNTAINS:
-                    geoData.setItems(gson.fromJson(itemData, geoJsonItemPlaceType));
+                    geoData.setItems((List<? extends GeoJsonItem>) gson.fromJson(itemData, geoJsonItemPlaceType));
                     System.out.println("Ok (items=" + geoData.getItems().size() + ")");
                     break;
             }
@@ -94,7 +94,7 @@ public class GeoJsonParser {
     public String loadUrl(String url) throws IOException {
         String result;
         String filename = url.substring(url.lastIndexOf("=") + 1) + ".json";
-        Path path = Paths.get(filename);
+        File path = new File(filename);
         if (LOAD_FROM_WEB) {
             // Load from web
             URL obj = new URL(url);
@@ -112,18 +112,19 @@ public class GeoJsonParser {
             result = response.toString();
 
             // Save to file
-            BufferedWriter writer = Files.newBufferedWriter(path);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
             writer.append(result);
             writer.close();
-            System.out.println("Write to file: " + path.toAbsolutePath());
+            System.out.println("Write to file: " + path.getAbsolutePath());
         } else if (LOAD_FROM_ASSET) {
             // Load from asset
-            result = new String(Files.readAllBytes(path));
-            System.out.println("Read from asset: " + path.toAbsolutePath());
+            //result = new String(Files.readAllBytes(path));
+            System.out.println("Read from asset: " + path.getAbsolutePath());
         } else {
             // Load from file
-            result = new String(Files.readAllBytes(path));
-            System.out.println("Read from file: " + path.toAbsolutePath());
+            Scanner scanner = new Scanner(path);
+            result = scanner.useDelimiter("\\A").next();
+            scanner.close();
         }
 
         return result;

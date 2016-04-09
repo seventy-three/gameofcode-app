@@ -1,6 +1,5 @@
 package lu.ing.gameofcode.geojson;
 
-import java.beans.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,6 @@ public class GeoJsonData implements Serializable {
         this.name = name;
     }
 
-    @Transient
     public String getId() {
         return id;
     }

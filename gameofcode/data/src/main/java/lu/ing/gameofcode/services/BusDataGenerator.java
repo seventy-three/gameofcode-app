@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.services;
 
 import java.io.IOException;
 import java.util.ArrayList;
