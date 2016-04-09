@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">GameOfCode</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
+    <string name="select_home">Domicile</string>
+    <string name="select_work">Travail</string>
+    <string name="goal_title">Objectif</string>
+    <string name="goal_one">Sexy sur la plage</string>
+    <string name="goal_two">Garder la pêche</string>
+    <string name="goal_three">Marathonien</string>
+    <string name="select_goal">Sélectionnez votre objectif</string>
+    <string name="validate">Valider</string>
 </resources>
