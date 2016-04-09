@@ -41,4 +41,13 @@ public class BusStop {
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
+
+    @Override
+    public String toString() {
+        return "BusStop{" +
+                "name='" + name + '\'' +
+                ", path=" + path +
+                ", direction=" + direction +
+                '}';
+    }
 }

@@ -6,12 +6,12 @@ package lu.ing.gameofcode.model;
 public class BusPath {
 
     BusStop parentBusStop;
-    boolean isWay1;
     long latitude;
     long longitude;
     int altitude;
     long distance;
-    int calories;
+    int caloriesFoot;
+    int caloriesBike;
     int timeBus;
     int timeFoot;
     int timeBike;
@@ -19,16 +19,8 @@ public class BusPath {
     public BusPath() {
     }
 
-    public BusPath(boolean isWay1, BusStop parentBusStop) {
+    public BusPath(BusStop parentBusStop) {
         this.parentBusStop = parentBusStop;
-    }
-
-    public boolean isWay1() {
-        return isWay1;
-    }
-
-    public void setWay1(boolean way1) {
-        isWay1 = way1;
     }
 
     public BusStop getParentBusStop() {
@@ -67,12 +59,20 @@ public class BusPath {
         this.distance = distance;
     }
 
-    public int getCalories() {
-        return calories;
+    public int getCaloriesFoot() {
+        return caloriesFoot;
     }
 
-    public void setCalories(int calories) {
-        this.calories = calories;
+    public void setCaloriesFoot(int caloriesFoot) {
+        this.caloriesFoot = caloriesFoot;
+    }
+
+    public int getCaloriesBike() {
+        return caloriesBike;
+    }
+
+    public void setCaloriesBike(int caloriesBike) {
+        this.caloriesBike = caloriesBike;
     }
 
     public int getTimeBus() {
@@ -97,5 +97,20 @@ public class BusPath {
 
     public void setTimeBike(int timeBike) {
         this.timeBike = timeBike;
+    }
+
+    @Override
+    public String toString() {
+        return "BusPath{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", altitude=" + altitude +
+                ", distance=" + distance +
+                ", caloriesFoot=" + caloriesFoot +
+                ", caloriesBike=" + caloriesBike +
+                ", timeBus=" + timeBus +
+                ", timeFoot=" + timeFoot +
+                ", timeBike=" + timeBike +
+                '}';
     }
 }

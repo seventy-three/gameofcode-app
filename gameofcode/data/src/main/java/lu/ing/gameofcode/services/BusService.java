@@ -8,6 +8,6 @@ import lu.ing.gameofcode.model.BusStop;
 
 public interface BusService {
 
-    List<BusStop> getBusStops(final int busLineNumber, LatLng start, LatLng stop);
+    List<BusStop> getBusStops(final String busLineNumber, LatLng start, LatLng stop);
 
 }

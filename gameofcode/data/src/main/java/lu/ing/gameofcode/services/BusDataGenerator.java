@@ -41,10 +41,23 @@ public class BusDataGenerator {
         BusDataGenerator generator = new BusDataGenerator(jsonData);
         generator.interpretBusLines();
 
+
+        System.out.println("------------------------------------------");
+        for (BusLine line : generator.getBusData().getLines()) {
+            if ("18".equals(line.getCode())) {
+                for (BusStop stop : line.getWay()) {
+                    System.out.println(stop);
+                }
+            }
+        }
     }
 
     public BusDataGenerator(List<GeoJsonData> geoJsonDataList) {
         this.geoJsonDataList = geoJsonDataList;
+    }
+
+    public BusData getBusData() {
+        return busData;
     }
 
     public void interpretBusLines() {
@@ -100,7 +113,7 @@ public class BusDataGenerator {
         List<BusStop> busStops = new ArrayList<>();
         for (GeoJsonItemPath path : way1) {
             BusStop busStop = new BusStop(busLine);
-            BusPath way1Path = new BusPath(false, busStop);
+            BusPath way1Path = new BusPath(busStop);
             way1Path.setDistance(path.getDistance());
             GeoJsonItemPath.GeoJsonItemPoint point = path.getPoints().getFirst();
             way1Path.setLatitude(point.getLatitude());

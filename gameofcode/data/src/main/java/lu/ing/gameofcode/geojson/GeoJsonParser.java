@@ -1,5 +1,7 @@
 package lu.ing.gameofcode.geojson;
 
+import android.content.Context;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -15,6 +17,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
@@ -31,9 +34,9 @@ public class GeoJsonParser {
     public static final String URL_LIST = BASE_URL + "?describe=1";
     public static final String URL_ITEM = BASE_URL + "?cat=";
 
-    public List<GeoJsonData> readData() throws IOException {
+    public List<GeoJsonData> readData(Context context) throws IOException {
         GsonBuilder gsonBuilder = new GsonBuilder();
-        String list = loadUrl(URL_LIST);
+        String list = loadUrl(URL_LIST, context);
 
         Type geoJsonDataType = new TypeToken<List<GeoJsonData>>() {}.getType();
         gsonBuilder.registerTypeAdapter(geoJsonDataType, new GeoJsonDeserializer());
@@ -48,7 +51,7 @@ public class GeoJsonParser {
         for (GeoJsonData geoData : geoDatas) {
             String itemName = geoData.getName();
             System.out.print("Loading \"" + itemName + "\"... ");
-            String itemData = loadUrl(URL_ITEM + geoData.getId());
+            String itemData = loadUrl(URL_ITEM + geoData.getId(), context);
 
             switch (geoData.getType()) {
                 case BUS_LINE:
@@ -71,6 +74,8 @@ public class GeoJsonParser {
                     System.out.println("Ok (items=" + geoData.getItems().size() + ")");
                     break;
             }
+
+            convertUnits(geoData.getItems());
         }
 
         return geoDatas;
@@ -91,7 +96,18 @@ public class GeoJsonParser {
         path.setDistance(distance);
     }
 
-    public String loadUrl(String url) throws IOException {
+    public void convertUnits(List<? extends GeoJsonItem> items) {
+        for (GeoJsonItem item : items) {
+            if (item instanceof GeoJsonItemPath) {
+                GeoJsonItemPath path = GeoJsonItemPath.class.cast(item);
+                //for ()
+            } else if (item instanceof GeoJsonItemPlace) {
+                // TODO
+            }
+        }
+    }
+
+    public String loadUrl(String url, Context context) throws IOException {
         String result;
         String filename = url.substring(url.lastIndexOf("=") + 1) + ".json";
         File path = new File(filename);
@@ -117,8 +133,16 @@ public class GeoJsonParser {
             writer.close();
             System.out.println("Write to file: " + path.getAbsolutePath());
         } else if (LOAD_FROM_ASSET) {
-            // Load from asset
-            //result = new String(Files.readAllBytes(path));
+            InputStream inputStream = context.getResources().getAssets().open(filename);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuffer buffer = new StringBuffer();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                buffer.append(line);
+                buffer.append('\n');
+            }
+            result = buffer.toString();
+            reader.close();
             System.out.println("Read from asset: " + path.getAbsolutePath());
         } else {
             // Load from file
@@ -159,15 +183,15 @@ public class GeoJsonParser {
                 switch (type) {
                     case "LineString":
                         for (JsonElement pt : ((JsonObject) geometry).get("coordinates").getAsJsonArray()) {
-                            path.addPoint((long) ((JsonArray) pt).get(0).getAsDouble() * 12,
-                                    (long) (((JsonArray) pt).get(1).getAsDouble() * 12));
+                            path.addPoint((long) ((JsonArray) pt).get(0).getAsDouble() * 10000000000L,
+                                    (long) (((JsonArray) pt).get(1).getAsDouble()) * 10000000000L);
                         }
                         computeDistance(path);
                         break;
                     case "Point":
                         JsonElement pt = ((JsonObject) geometry).get("coordinates").getAsJsonArray();
-                        path.addPoint((long) ((JsonArray) pt).get(0).getAsDouble() * 12,
-                                (long) (((JsonArray) pt).get(1).getAsDouble() * 12));
+                        path.addPoint((long) ((JsonArray) pt).get(0).getAsDouble() * 10000000000L,
+                                (long) (((JsonArray) pt).get(1).getAsDouble()) * 10000000000L);
                         break;
                 }
             }
