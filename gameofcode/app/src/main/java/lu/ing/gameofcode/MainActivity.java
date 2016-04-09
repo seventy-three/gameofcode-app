@@ -41,8 +41,6 @@ import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.LineBean;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 
 public class MainActivity extends AppCompatActivity
         implements
