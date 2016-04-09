@@ -19,6 +19,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +94,8 @@ public class GeoJsonParser {
 
     public String loadUrl(String url) throws IOException {
         String result;
-        String filename = url.substring(url.lastIndexOf("?") + 1) + ".json";
+        String filename = url.substring(url.lastIndexOf("=") + 1) + ".json";
+        Path path = Paths.get(filename);
         if (LOAD_FROM_WEB) {
             // Load from web
             URL obj = new URL(url);
@@ -111,12 +113,14 @@ public class GeoJsonParser {
             result = response.toString();
 
             // Save to file
-            BufferedWriter writer = Files.newBufferedWriter(FileSystems.getDefault().getPath(filename));
+            BufferedWriter writer = Files.newBufferedWriter(path);
             writer.append(result);
             writer.close();
+            System.out.println("Write to file: " + path.toAbsolutePath());
         } else {
             // Load from file
-            result = new String(Files.readAllBytes(Paths.get(filename)));
+            result = new String(Files.readAllBytes(path));
+            System.out.println("Read from file: " + path.toAbsolutePath());
         }
 
         return result;

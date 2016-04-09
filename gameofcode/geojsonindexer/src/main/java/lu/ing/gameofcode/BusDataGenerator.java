@@ -14,15 +14,19 @@ import lu.ing.gameofcode.geojson.GeoJsonData;
 import lu.ing.gameofcode.geojson.GeoJsonDataType;
 import lu.ing.gameofcode.model.BusData;
 import lu.ing.gameofcode.model.BusLine;
+import lu.ing.gameofcode.model.BusPath;
+import lu.ing.gameofcode.model.BusStop;
 
 /**
  * Created by patrice on 09.04.16.
  */
 public class BusDataGenerator {
 
-    public static Pattern BUS_CODE_PATTERN = Pattern.compile("Ligne-([^ ]+)");
+    public static Pattern BUS_CODE_PATTERN = Pattern.compile("Ligne-([^ ]+) .*");
+    public static Pattern BUS_STOP_PATTERN = Pattern.compile("Ligne autobus: ([0-9]+) / (.*)<br>Direction\\(s\\): (.*)");
+    // Ligne autobus: 9 / Martyrs Quai 1<br>Direction(s): Cents-Waassertuerm
 
-    private List<GeoJsonData> geoJsonData;
+    private List<GeoJsonData> geoJsonDataList;
     private BusData busData = new BusData();
 
     public static void main(String... args) throws IOException {
@@ -35,18 +39,21 @@ public class BusDataGenerator {
         System.out.println("- Generate bus data");
         System.out.println("------------------------------------------");
         BusDataGenerator generator = new BusDataGenerator(jsonData);
-        for (GeoJsonData geoJsonData : jsonData) {
-            // Keep only bus lines for now
-            if (geoJsonData.getType() == GeoJsonDataType.BUS_LINE) {
-                generator.busData.addLine(generator.interpretBusLine(geoJsonData));
-                break; // FIXME
-            }
-        }
-        System.out.println("------------------------------------------");
+        generator.interpretBusLines();
+
     }
 
-    public BusDataGenerator(List<GeoJsonData> geoJsonData) {
-        this.geoJsonData = geoJsonData;
+    public BusDataGenerator(List<GeoJsonData> geoJsonDataList) {
+        this.geoJsonDataList = geoJsonDataList;
+    }
+
+    public void interpretBusLines() {
+        for (GeoJsonData geoJsonData : geoJsonDataList) {
+            // Keep only bus lines for now
+            if (geoJsonData.getType() == GeoJsonDataType.BUS_LINE) {
+                busData.addLine(interpretBusLine(geoJsonData));
+            }
+        }
     }
 
     public BusLine interpretBusLine(GeoJsonData geoJsonData) {
@@ -60,45 +67,73 @@ public class BusDataGenerator {
         // Separate places and paths
         List<GeoJsonItemPlace> places = new ArrayList<>();
         Deque<GeoJsonItemPath> paths = new LinkedList<>();
+        Deque<GeoJsonItemPath> stops = new LinkedList<>();
         for (GeoJsonItem item : geoJsonData.getItems()) {
             if (item instanceof GeoJsonItemPlace) {
                 places.add((GeoJsonItemPlace) item);
             } else if (item instanceof GeoJsonItemPath) {
                 if (((GeoJsonItemPath) item).getPoints().size() > 1) {
                     paths.add((GeoJsonItemPath) item);
+                } else {
+                    stops.add((GeoJsonItemPath) item);
                 }
             }
         }
 
         List<GeoJsonItemPath> way1 = extractAndSortOneWay(paths);
-        if (paths.isEmpty()) {
-            System.err.println("Paths empty after one way: " + busLine.getName());
-        }
+        // TODO add both terminus
+        /*
         System.out.println("Way1 _______________");
         for (GeoJsonItemPath path : way1) {
             System.out.println(path);
         }
+        */
 
-        List<GeoJsonItemPath> way2 = extractAndSortOneWay(paths);
-        if (!paths.isEmpty()) {
-            System.err.println("Paths not empty after two ways: " + busLine.getName());
-        } else {
+        if (paths.isEmpty()) {
             System.out.println("All ok: " + busLine.getName());
-        }
-        System.out.println("Way2 _______________");
-        for (GeoJsonItemPath path : way2) {
-            System.out.println(path);
+        } else {
+            System.err.println("Paths not empty: " + busLine.getName());
         }
 
-        System.out.println("Remaining _______________");
-        for (GeoJsonItemPath path : paths) {
-            System.out.println(path);
+        String firstDirection = null;
+
+        List<BusStop> busStops = new ArrayList<>();
+        for (GeoJsonItemPath path : way1) {
+            BusStop busStop = new BusStop(busLine);
+            BusPath way1Path = new BusPath(false, busStop);
+            way1Path.setDistance(path.getDistance());
+            GeoJsonItemPath.GeoJsonItemPoint point = path.getPoints().getFirst();
+            way1Path.setLatitude(point.getLatitude());
+            way1Path.setLongitude(point.getLongitude());
+            way1Path.setAltitude(point.getAltitude());
+            busStop.setPath(way1Path);
+            busStops.add(busStop);
+            for (GeoJsonItemPath stop : stops) {
+                if (point.equals(stop.getPoints().getFirst())) {
+                    Matcher matcher = BUS_STOP_PATTERN.matcher(stop.getName());
+                    if (matcher.matches()) {
+                        busStop.setName(matcher.group(2));
+                        String direction = matcher.group(3).trim();
+                        String[] directions = direction.split("/");
+                        if (directions.length > 1) {
+                            direction = directions[0].trim();
+                        }
+                        if (firstDirection == null) {
+                            firstDirection = direction;
+                        }
+                        busStop.setDirection(directions.length > 1 ? BusStop.Direction.BOTH : (direction.equals(firstDirection) ? BusStop.Direction.WAY1 : BusStop.Direction.WAY2));
+                    } else {
+                        busStop.setName(stop.getName());
+                    }
+                }
+            }
         }
+        busLine.setWay(busStops);
 
         return busLine;
     }
 
-    List<GeoJsonItemPath> extractAndSortOneWay(Deque<GeoJsonItemPath> paths) {
+    private List<GeoJsonItemPath> extractAndSortOneWay(Deque<GeoJsonItemPath> paths) {
         LinkedList<GeoJsonItemPath> extracted = new LinkedList<>();
 
         GeoJsonItemPath place = paths.poll();
@@ -114,9 +149,11 @@ public class BusDataGenerator {
             Iterator<GeoJsonItemPath> iter = paths.iterator();
             while (!found && iter.hasNext()) {
                 GeoJsonItemPath path = iter.next();
-                if (firstPoint.equals(path.getPoints().getLast())) {
+                GeoJsonItemPath.GeoJsonItemPoint point = path.getPoints().getLast();
+                if (firstPoint.equals(point)) {
                     extracted.addFirst(path);
                     iter.remove();
+                    firstPoint = path.getPoints().getFirst();
                     found = true;
                 }
             }
@@ -128,9 +165,11 @@ public class BusDataGenerator {
             Iterator<GeoJsonItemPath> iter = paths.iterator();
             while (!found && iter.hasNext()) {
                 GeoJsonItemPath path = iter.next();
-                if (lastPoint.equals(path.getPoints().getFirst())) {
+                GeoJsonItemPath.GeoJsonItemPoint point = path.getPoints().getFirst();
+                if (lastPoint.equals(point)) {
                     extracted.addLast(path);
                     iter.remove();
+                    lastPoint = path.getPoints().getLast();
                     found = true;
                 }
             }

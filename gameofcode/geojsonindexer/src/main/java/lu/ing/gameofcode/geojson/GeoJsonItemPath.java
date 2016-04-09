@@ -55,7 +55,7 @@ public class GeoJsonItemPath extends GeoJsonItem {
     public class GeoJsonItemPoint {
         private long longitude;
         private long latitude;
-        private long altitude;
+        private int altitude;
 
         public GeoJsonItemPoint() {
         }
@@ -73,11 +73,11 @@ public class GeoJsonItemPath extends GeoJsonItem {
             return latitude;
         }
 
-        public long getAltitude() {
+        public int getAltitude() {
             return altitude;
         }
 
-        public void setAltitude(long altitude) {
+        public void setAltitude(int altitude) {
             this.altitude = altitude;
         }
 

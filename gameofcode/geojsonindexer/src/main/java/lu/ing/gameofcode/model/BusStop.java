@@ -5,10 +5,11 @@ package lu.ing.gameofcode.model;
  */
 public class BusStop {
 
+    public enum Direction {WAY1, WAY2, BOTH}
     BusLine parentBusLine;
     String name;
-    BusPath way1Path;
-    BusPath way2Path;
+    BusPath path;
+    Direction direction;
 
     public BusStop() {
     }
@@ -25,19 +26,19 @@ public class BusStop {
         this.name = name;
     }
 
-    public BusPath getWay1Path() {
-        return way1Path;
+    public BusPath getPath() {
+        return path;
     }
 
-    public void setWay1Path(BusPath way1Path) {
-        this.way1Path = way1Path;
+    public void setPath(BusPath path) {
+        this.path = path;
     }
 
-    public BusPath getWay2Path() {
-        return way2Path;
+    public Direction getDirection() {
+        return direction;
     }
 
-    public void setWay2Path(BusPath way2Path) {
-        this.way2Path = way2Path;
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 }

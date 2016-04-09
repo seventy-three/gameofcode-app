@@ -9,7 +9,7 @@ public class BusLine {
 
     String code;
     String name;
-    List<BusStop> way1;
+    List<BusStop> way;
     List<BusStop> way2;
 
     public String getCode() {
@@ -28,19 +28,11 @@ public class BusLine {
         this.name = name;
     }
 
-    public List<BusStop> getWay1() {
-        return way1;
+    public List<BusStop> getWay() {
+        return way;
     }
 
-    public void setWay1(List<BusStop> way1) {
-        this.way1 = way1;
-    }
-
-    public List<BusStop> getWay2() {
-        return way2;
-    }
-
-    public void setWay2(List<BusStop> way2) {
-        this.way2 = way2;
+    public void setWay(List<BusStop> way) {
+        this.way = way;
     }
 }
