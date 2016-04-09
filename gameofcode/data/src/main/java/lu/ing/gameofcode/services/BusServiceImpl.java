@@ -1,5 +1,7 @@
 package lu.ing.gameofcode.services;
 
+import android.content.Context;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
@@ -17,9 +19,10 @@ import lu.ing.gameofcode.model.BusStop;
 public class BusServiceImpl implements BusService {
 
     private BusData busData = null;
+    private Context context = null;
 
-    public BusServiceImpl(BusData busData) {
-        this.busData = busData;
+    public BusServiceImpl(Context context) {
+        this.context = context;
     }
 
     public void initBusData() {
@@ -29,7 +32,7 @@ public class BusServiceImpl implements BusService {
         GeoJsonParser parser = new GeoJsonParser();
         List<GeoJsonData> jsonData;
         try {
-            jsonData = parser.readData();
+            jsonData = parser.readData(context);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
