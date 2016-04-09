@@ -2,6 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:layout_marginTop="-20dp"
+        android:layout_marginRight="-20dp"
+        android:layout_marginEnd="-20dp"
+        android:src="@drawable/sun"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
     <Spinner
         android:id="@+id/buslines_sp"
         android:layout_width="match_parent"
@@ -14,18 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ImageView
-        android:layout_below="@id/buslines_sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="3"
-        android:scaleY="3"
-        android:layout_marginTop="-100dp"
-        android:layout_marginRight="-20dp"
-        android:layout_marginEnd="-20dp"
-        android:src="@drawable/sun"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+
 
     <ProgressBar
         android:id="@+id/loading_pb"

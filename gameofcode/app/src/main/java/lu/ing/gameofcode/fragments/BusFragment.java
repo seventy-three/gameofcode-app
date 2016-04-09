@@ -14,26 +14,32 @@ import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import lu.ing.gameofcode.R;
 import lu.ing.gameofcode.line.LineBean;
 import lu.ing.gameofcode.line.LineBeanSorter;
+import lu.ing.gameofcode.model.BusStop;
 import lu.ing.gameofcode.requests.LineBeansRequest;
 import lu.ing.gameofcode.services.BusService;
 import lu.ing.gameofcode.services.BusServiceImpl;
 import lu.ing.gameofcode.utils.MySpiceService;
 import lu.ing.gameofcode.utils.SharedPreferencesUtils;
+import lu.ing.gameofcode.veloh.VelohAlternative;
+import lu.ing.gameofcode.veloh.VelohStationBean;
 
 public class BusFragment extends Fragment {
 
@@ -48,6 +54,8 @@ public class BusFragment extends Fragment {
 
     private SpiceManager spiceManager = new SpiceManager(MySpiceService.class);
     private BusService busService;
+    private List<BusStop> busStops;
+    private List<VelohStationBean> velohStationBeen;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,7 +111,17 @@ public class BusFragment extends Fragment {
         SharedPreferences preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
         final LatLng home = getCoordinates(preferences, "homeLatitude", "homeLongitude");
         final LatLng work = getCoordinates(preferences, "workLatitude", "workLongitude");
-        final List<lu.ing.gameofcode.model.BusStop> busStops = busService.getBusStops(num, home, work);
+        busStops = busService.getBusStops(num, home, work);
+
+        if (busStops == null) {
+            hideLoading();
+            return;
+        }
+
+        velohStationBeen = new ArrayList<>();
+        for (BusStop busStop : busStops) {
+            
+        }
 
         RecyclerView.Adapter mAdapter = new MyAdapter(busStops);
         mRecyclerView.setAdapter(mAdapter);
@@ -168,7 +186,9 @@ public class BusFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             final lu.ing.gameofcode.model.BusStop busStop = mDataset.get(position);
-            holder.mTextView.setText(busStop.getName());
+            holder.mTextView.setText(String.format(Locale.FRANCE, "%s\n%d minutes de marche",
+                    busStop.getName(),
+                    busStop.getPath().getTimeFoot() / 60));
         }
 
         @Override

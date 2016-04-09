@@ -9,8 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import org.apache.commons.lang3.RandomUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
