@@ -1,5 +1,6 @@
 package lu.ing.gameofcode;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class GoalActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("preferences", MODE_PRIVATE);
         preferences.edit().putInt("goalTimeInMinutes", timeInMinute).apply();
 
+        startActivity(new Intent(this, PlanningActivity.class));
     }
 
     private int getTimeInMinutesFromGoal(final int goal) {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GameOfCode</string>
+    <string name="app_name">FitBus</string>
 
     <string name="select_home">Domicile</string>
     <string name="select_work">Travail</string>
@@ -9,4 +9,5 @@
     <string name="goal_three">Marathonien</string>
     <string name="select_goal">Sélectionnez votre objectif</string>
     <string name="validate">Valider</string>
+    <string name="rainy">Aujourd\'hui il pleut, reposez-vous. Pensez à prendre votre parapluie.</string>
 </resources>

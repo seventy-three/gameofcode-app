@@ -35,13 +35,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBpbkY7C2_S09nvXyOtK5U1n98cMhTJfvA" />
 
-        <activity android:name=".GoalActivity"
-            android:label="@string/goal_title"></activity>
-
+        <activity
+            android:name=".GoalActivity"
+            android:label="@string/goal_title" />
 
         <service
             android:name=".MySpiceService"
             android:exported="false" />
+
+        <activity android:name=".PlanningActivity"></activity>
     </application>
 
 </manifest>
