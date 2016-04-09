@@ -38,12 +38,20 @@ public class VelohAlternative {
     /**
      * Constructeur.
      *
-     * @param context
+     * @param context the context
      */
     public VelohAlternative(Context context) {
         this.context = context;
     }
 
+    /**
+     * Compute the distance between two gps coords.
+     * @param latitude1 latitude first coord
+     * @param longitude1 longitude first coord
+     * @param latitude2 latitude second coord
+     * @param longitude2 longitude seconf coord
+     * @return
+     */
     public double distanceTo(final String latitude1, final String longitude1, final String latitude2, final String longitude2)
     {
         double lat_2 = Double.parseDouble(latitude2);
@@ -51,7 +59,15 @@ public class VelohAlternative {
         return distanceTo(latitude1,longitude1,lat_2,lon_2);
     }
 
-    public double distanceTo(final String latitude1, final String longitude1, final double lat_2, final double lon_2)
+    /**
+     * Compute the distance between two gps coords.
+     * @param latitude1 latitude first coord
+     * @param longitude1 longitude first coord
+     * @param lat_2 latitude second coord
+     * @param lon_2 longitude second coord
+     * @return
+     */
+    private double distanceTo(final String latitude1, final String longitude1, final double lat_2, final double lon_2)
     {
         double lat_1 = Double.parseDouble(latitude1);
         double lon_1 = Double.parseDouble(longitude1);
@@ -60,6 +76,13 @@ public class VelohAlternative {
         return SphericalUtil.computeDistanceBetween(ll1,ll2);
     }
 
+    /**
+     * Return the list of available station of Veloh.
+     * @param latitude latitude
+     * @param longitude longitude
+     * @return
+     * @throws Exception
+     */
     public VelohStationBean[] getAvailableVeloh(final String latitude, final String longitude) throws Exception {
 
         InputStream inputStream = context.getResources().getAssets().open("VelohStation.json");
@@ -76,6 +99,7 @@ public class VelohAlternative {
                 mStations.put(station.getNumber(), station);
             }
         }
+
         return Arrays.copyOf(mStations.values().toArray(), mStations.size(), VelohStationBean[].class);
     }
 
