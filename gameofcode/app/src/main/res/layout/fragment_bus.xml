@@ -18,9 +18,10 @@
         android:layout_below="@id/buslines_sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:layout_marginTop="-100dp"
+        android:layout_marginRight="-20dp"
         android:src="@drawable/sun"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true" />
