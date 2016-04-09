@@ -37,6 +37,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 import lu.ing.gameofcode.line.BusLine;
+import lu.ing.gameofcode.line.LineBean;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
@@ -82,35 +83,38 @@ public class MainActivity extends AppCompatActivity
 //            e.printStackTrace();
 //        }
         /////////////////////////////////////////////////////
-        final OkHttpClient client = new OkHttpClient();
+        /*final OkHttpClient client = new OkHttpClient();
 
         // Create request for remote resource.
         final Request request = new Request.Builder()
                 .url("http://google.com")
-                .build();
+                .build();*/
 
         // Execute the request and retrieve the response.
-
-
-        spiceManager.execute(new SpiceRequest<String>(String.class) {
+        final BusLine line = new BusLine(this);
+        spiceManager.execute(new SpiceRequest<LineBean[]>(LineBean[].class) {
             @Override
-            public String loadDataFromNetwork() throws Exception {
+            public LineBean[] loadDataFromNetwork() throws Exception {
                 try {
-                    return client.newCall(request).execute().body().string();
+                    return line.getAvailableLines("49599457","6132893");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return null;
             }
-        }, new RequestListener<String>() {
+        }, new RequestListener<LineBean[]>() {
             @Override
             public void onRequestFailure(SpiceException spiceException) {
-
+                System.out.println("   getAvailableLines Failure");/**/
+                Log.d("MAIN","getAvailableLines Failure");
             }
-
             @Override
-            public void onRequestSuccess(String s) {
-                Log.d("MAIN", s);
+            public void onRequestSuccess(LineBean[] lines) {
+                System.out.println("   size="+lines.length);/**/
+                Log.d("MAIN","getAvailableLines nb result="+lines.length);
+                for (final LineBean line : lines) {
+                    Log.d("MAIN", "getAvailableLines LINE N°"+line.getNum());
+                }
             }
         });
 

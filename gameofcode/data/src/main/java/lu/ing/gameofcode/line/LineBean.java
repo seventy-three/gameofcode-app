@@ -4,7 +4,7 @@ public class LineBean {
 
     private String num;
     private String name;
-    private String catIn;
+    private String operatorCode;
     private String latitude;
     private String longitude;
     private String stopId;
@@ -24,14 +24,6 @@ public class LineBean {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCatIn() {
-        return catIn;
-    }
-
-    public void setCatIn(String catIn) {
-        this.catIn = catIn;
     }
 
     public String getLatitude() {
@@ -64,5 +56,13 @@ public class LineBean {
 
     public void setStopExtId(String stopExtId) {
         this.stopExtId = stopExtId;
+    }
+
+    public String getOperatorCode() {
+        return operatorCode;
+    }
+
+    public void setOperatorCode(String operatorCode) {
+        this.operatorCode = operatorCode;
     }
 }

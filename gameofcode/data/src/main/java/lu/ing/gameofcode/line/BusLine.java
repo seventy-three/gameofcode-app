@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -37,11 +38,20 @@ public class BusLine {
     public static final int DIST_MIN=150;
     public static final int DIST_MAX=500;
 
-    // &look_maxdist=300
-    // &look_x=6132893&look_y=49599457
-
+    /**
+     * List of bus line at a specific stop.
+     */
     private static final String ENDPOINT_DEPARTURE = "http://travelplanner.mobiliteit.lu/restproxy/departureBoard?accessId=cdt&format=json&time=07:00";
+
+    /**
+     * List of stop at proximity.
+     */
     private static final String ENDPOINT_STOP = "http://travelplanner.mobiliteit.lu/hafas/query.exe/dot?performLocating=2&tpl=stop2csv&stationProxy=yes";
+
+    /**
+     * List of operators managed (separeted by comma)
+     */
+    private static final String OPERATORS = "AVL";
 
     /**
      * Constructeur.
@@ -81,7 +91,7 @@ public class BusLine {
     private Request buildRequestDeparture(final String stopId) {
         System.out.println(ENDPOINT_DEPARTURE+"&"+stopId);/**/
         return new Request.Builder()
-                .url(ENDPOINT_DEPARTURE+"&"+stopId)
+                .url(ENDPOINT_DEPARTURE+"&operators="+OPERATORS+"&"+stopId)
                 .build();
     }
 
@@ -127,27 +137,35 @@ public class BusLine {
         return stopIdList;
     }
 
-    public List<LineBean> getAvailableLines(final String latitude, final String longitude) throws Exception {
+    /**
+     * List of avaiable lines at proximity.
+     *
+     * @param latitude the latitude (y)
+     * @param longitude the longitude (x)
+     * @return
+     * @throws Exception
+     */
+    public LineBean[] getAvailableLines(final String latitude, final String longitude) throws Exception {
 
-        List<LineBean> items = new ArrayList<>();
+        LineBean[] items = new LineBean[0];
 
         OkHttpClient client = new OkHttpClient();
 
         List<String> stopIdList = getAvailableStopIdList(client, latitude, longitude);
-        if (stopIdList.size()>0){
+        if (stopIdList.size()>0) {
 
             Request request;
             Response response;
             ResponseBody body;
             Reader charStream;
-            int currentDist = DIST_MIN;
 
             GsonBuilder gsonBuilder = new GsonBuilder();
-            Type LineJsonDataType = new TypeToken<List<LineBean>>() {}.getType();
+            Type LineJsonDataType = new TypeToken<List<LineBean>>() {
+            }.getType();
             gsonBuilder.registerTypeAdapter(LineJsonDataType, new LineJsonDeserializer());
 
-            Map<String,LineBean> mlines = new HashMap<>();
-            for (final String stopId : stopIdList){
+            Map<String, LineBean> mlines = new HashMap<>();
+            for (final String stopId : stopIdList) {
 
                 request = buildRequestDeparture(stopId);
 
@@ -157,34 +175,31 @@ public class BusLine {
                 // Deserialize HTTP response to concrete type.
                 body = response.body();
                 System.out.println(response.code());
-                if (response.code()==404){
+                if (response.code() == 404) {
                     AssetFileDescriptor descriptor = context.getAssets().openFd("DepartureMock.json");
                     charStream = new FileReader(descriptor.getFileDescriptor());
-                }
-                else{
+                } else {
                     charStream = body.charStream();
                 }
 
-                /*BufferedReader br = new BufferedReader(charStream);
-                String cline;
-                while ((cline = br.readLine()) != null) {
-                    System.out.println(cline);
-                    //Log.d("CACA", "getAvailableLines: "+cline);
-                }*/
-
                 final Gson gson = gsonBuilder.create();
                 final List<LineBean> lineList = gson.fromJson(charStream, LineJsonDataType);
-                for (final LineBean line:lineList){
-                    mlines.put(line.getNum(),line);
-                    System.out.println("num="+line.getNum());
+                for (final LineBean line : lineList) {
+                    mlines.put(line.getNum(), line);
+                    System.out.println(line.getNum());/**/
                 }
             }
-            items.addAll(mlines.values());
+
+            items = Arrays.copyOf(mlines.values().toArray(), mlines.size(), LineBean[].class);
+            System.out.println("   size="+items.length);/**/
         }
 
         return items;
     }
 
+    /**
+     * Custom Json deserializer.
+     */
     private static class LineJsonDeserializer implements JsonDeserializer<List<LineBean>> {
         public List<LineBean> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             List<LineBean> items = new ArrayList<>();
@@ -195,7 +210,7 @@ public class BusLine {
                 if (null==lines.get(num)){
 
                     final String name = product.get("name").getAsString();
-                    final String catIn = product.get("catIn").getAsString();
+                    final String operatorCode = product.get("operatorCode").getAsString();
 
                     final String stopid = ((JsonObject) departure).get("stopid").getAsString();
                     final String stopExtId = ((JsonObject) departure).get("stopExtId").getAsString();
@@ -203,7 +218,7 @@ public class BusLine {
                     final LineBean line = new LineBean();
                     line.setNum(num);
                     line.setName(name);
-                    line.setCatIn(catIn);
+                    line.setOperatorCode(operatorCode);
                     line.setStopId(stopid);
                     line.setStopExtId(stopExtId);
                     final String[] token = stopid.split("@");
