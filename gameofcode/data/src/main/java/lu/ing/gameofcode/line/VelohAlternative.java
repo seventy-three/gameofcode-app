@@ -46,10 +46,15 @@ public class VelohAlternative {
 
     public double distanceTo(final String latitude1, final String longitude1, final String latitude2, final String longitude2)
     {
-        double lat_1 = Double.parseDouble(latitude1);
-        double lon_1 = Double.parseDouble(longitude1);
         double lat_2 = Double.parseDouble(latitude2);
         double lon_2 = Double.parseDouble(longitude2);
+        return distanceTo(latitude1,longitude1,lat_2,lon_2);
+    }
+
+    public double distanceTo(final String latitude1, final String longitude1, final double lat_2, final double lon_2)
+    {
+        double lat_1 = Double.parseDouble(latitude1);
+        double lon_1 = Double.parseDouble(longitude1);
         final LatLng ll1 = new LatLng(lat_1, lon_1);
         final LatLng ll2 = new LatLng(lat_2, lon_2);
         return SphericalUtil.computeDistanceBetween(ll1,ll2);
@@ -66,10 +71,11 @@ public class VelohAlternative {
         final List<VelohStationBean> stationList = gson.fromJson(reader, VelohStationJsonDataType);
         final Map<String, VelohStationBean> mStations = new HashMap<>();
         for (final VelohStationBean station : stationList) {
-            System.out.println(station.getName());
-            mStations.put(station.getNumber(), station);
+            double dist = distanceTo(latitude,longitude,station.getLatitude(),station.getLongitude());
+            if (dist<=DIST_MAX){
+                mStations.put(station.getNumber(), station);
+            }
         }
-
         return Arrays.copyOf(mStations.values().toArray(), mStations.size(), VelohStationBean[].class);
     }
 
