@@ -30,6 +30,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
+import lu.ing.gameofcode.line.BusLine;
 
 public class MainActivity extends AppCompatActivity
         implements
@@ -63,6 +64,15 @@ public class MainActivity extends AppCompatActivity
                 .addOnConnectionFailedListener(this)
                 .build();
         googleApiClient.connect();
+
+        /////////////////////////////////////////////////////
+        BusLine line = new BusLine(this);
+        try {
+            line.getAvailableLines("49599457","6132893");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        /////////////////////////////////////////////////////
     }
 
     @Override

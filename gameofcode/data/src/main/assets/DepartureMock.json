@@ -1,0 +1,2862 @@
+{
+  Departure: [
+    {
+      JourneyDetailRef: {
+        ref: "1|1911|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 144",
+        num: "875",
+        line: "144",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 144",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:00:00",
+      date: "2016-04-09",
+      direction: "Itzig, Hubertuspad",
+      trainNumber: "875",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2126|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 194",
+        num: "1609",
+        line: "194",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 194",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:01:00",
+      date: "2016-04-09",
+      direction: "Bettembourg, Gare",
+      trainNumber: "1609",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3803|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 28",
+        num: "2000",
+        line: "28",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 28",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:01:00",
+      date: "2016-04-09",
+      direction: "Bertrange, Belle Etoile",
+      trainNumber: "2000",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|572|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 7",
+        num: "1776",
+        line: "7",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 7",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:02:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter Parking",
+      trainNumber: "1776",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3906|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 195",
+        num: "6049",
+        line: "195",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 195",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:02:00",
+      date: "2016-04-09",
+      direction: "Peppange, Duerfplaz",
+      trainNumber: "6049",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|984|0|80|9042016"
+      },
+      Product: {
+        name: "CRE 6707",
+        num: "6707",
+        line: "",
+        catOut: "CRE ",
+        catIn: "CRE",
+        catCode: "2",
+        catOutS: "CRE",
+        catOutL: "CRE ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "CRE 6707",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:03:00",
+      date: "2016-04-09",
+      direction: "Rodange, Gare",
+      trainNumber: "6707",
+      trainCategory: "CRE"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|77|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 11",
+        num: "851",
+        line: "11",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 11",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:04:00",
+      date: "2016-04-09",
+      direction: "Steinsel, Michel Rodange Plaz",
+      trainNumber: "851",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|159|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 14",
+        num: "958",
+        line: "14",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 14",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:04:00",
+      date: "2016-04-09",
+      direction: "Cents, Waassertuerm",
+      trainNumber: "958",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3841|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 29",
+        num: "2042",
+        line: "29",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 29",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:04:00",
+      date: "2016-04-09",
+      direction: "Gasperich/Howald, P+R Howald",
+      trainNumber: "2042",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2117|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 192",
+        num: "1551",
+        line: "192",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 192",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:06:00",
+      date: "2016-04-09",
+      direction: "Hassel, Küneftchen",
+      trainNumber: "1551",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2136|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 194",
+        num: "1656",
+        line: "194",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 194",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:06:00",
+      date: "2016-04-09",
+      direction: "Sandweiler, Am Eck",
+      trainNumber: "1656",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|143|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 13",
+        num: "938",
+        line: "13",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 13",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:07:00",
+      date: "2016-04-09",
+      direction: "Luxembourg/Strassen, Centre Hospitalier",
+      trainNumber: "938",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|357|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 2",
+        num: "1481",
+        line: "2",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 2",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Cessange, Boy Konen",
+      trainNumber: "1481",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|502|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 4",
+        num: "70",
+        line: "4",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 4",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Leudelange, Gemeng",
+      trainNumber: "70",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|677|0|80|9042016"
+      },
+      Product: {
+        name: "RB 4807",
+        num: "4807",
+        line: "",
+        catOut: "RB ",
+        catIn: "CRB",
+        catCode: "2",
+        catOutS: "CRB",
+        catOutL: "RB ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "RB 4807",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Oetrange, Gare",
+      trainNumber: "4807",
+      trainCategory: "CRB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2043|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 175",
+        num: "1313",
+        line: "175",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 175",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Remich, rue de la Corniche",
+      trainNumber: "1313",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2147|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 197",
+        num: "1705",
+        line: "197",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 197",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Ottange, Pl. de Montcontour",
+      trainNumber: "1705",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2197|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 205",
+        num: "1974",
+        line: "205",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 205",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Esch/Alzette, Gare",
+      trainNumber: "1974",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2469|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 300",
+        num: "3121",
+        line: "300",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 300",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:10:00",
+      date: "2016-04-09",
+      direction: "Hayange-Esplanade",
+      trainNumber: "3121",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|292|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 18",
+        num: "1287",
+        line: "18",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 18",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:11:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Luxexpo Entrée Sud Quai 1",
+      trainNumber: "1287",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|234|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 16",
+        num: "1090",
+        line: "16",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 16",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:13:00",
+      date: "2016-04-09",
+      direction: "Hesperange, Cité Um Schlass",
+      trainNumber: "1090",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1001|0|80|9042016"
+      },
+      Product: {
+        name: "CRE86552",
+        num: "86552",
+        line: "",
+        catOut: "CRE ",
+        catIn: "CRE",
+        catCode: "2",
+        catOutS: "CRE",
+        catOutL: "CRE ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "CRE86552",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:15:00",
+      date: "2016-04-09",
+      direction: "Longwy, Gare",
+      trainNumber: "86552",
+      trainCategory: "CRE"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2163|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 200",
+        num: "1782",
+        line: "200",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 200",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:15:00",
+      date: "2016-04-09",
+      direction: "Bettembourg, Gare",
+      trainNumber: "1782",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2209|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 210",
+        num: "2059",
+        line: "210",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 210",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:15:00",
+      date: "2016-04-09",
+      direction: "Bascharage/Sanem, Gare",
+      trainNumber: "2059",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2210|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 210",
+        num: "2074",
+        line: "210",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 210",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:15:00",
+      date: "2016-04-09",
+      direction: "Bascharage/Sanem, Gare",
+      trainNumber: "2074",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3770|0|80|9042016"
+      },
+      Product: {
+        name: "Bus ",
+        num: "689",
+        line: "S-Lex",
+        catOut: "Bus ",
+        catIn: "CFB",
+        catCode: "5",
+        catOutS: "CFB",
+        catOutL: "CFL_Fernbus",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus ",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:15:00",
+      date: "2016-04-09",
+      direction: "Saarbrücken Hbf",
+      trainNumber: "689",
+      trainCategory: "CFB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2123|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 192",
+        num: "1586",
+        line: "192",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 192",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:17:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter",
+      trainNumber: "1586",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|800|0|80|9042016"
+      },
+      Product: {
+        name: "RB 6807",
+        num: "6807",
+        line: "",
+        catOut: "RB ",
+        catIn: "CRB",
+        catCode: "2",
+        catOutS: "CRB",
+        catOutL: "RB ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "RB 6807",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:18:00",
+      date: "2016-04-09",
+      direction: "Rodange, Gare",
+      trainNumber: "6807",
+      trainCategory: "CRB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1835|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 125",
+        num: "654",
+        line: "125",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 125",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:18:00",
+      date: "2016-04-09",
+      direction: "Oberanven, Gemeng",
+      trainNumber: "654",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|48|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 10",
+        num: "819",
+        line: "10",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 10",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:19:00",
+      date: "2016-04-09",
+      direction: "Steinsel, Michel Rodange Plaz",
+      trainNumber: "819",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4051|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 9",
+        num: "1859",
+        line: "9",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 9",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:19:00",
+      date: "2016-04-09",
+      direction: "Cents, Waassertuerm",
+      trainNumber: "1859",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1808|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 120",
+        num: "465",
+        line: "120",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 120",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:20:00",
+      date: "2016-04-09",
+      direction: "Junglinster, Gemeng",
+      trainNumber: "465",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1917|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 144",
+        num: "914",
+        line: "144",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 144",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:20:00",
+      date: "2016-04-09",
+      direction: "Neuhaeusgen, Iewescht Neihaischen",
+      trainNumber: "914",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|210|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 16",
+        num: "1059",
+        line: "16",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 16",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:21:00",
+      date: "2016-04-09",
+      direction: "Aéroport Luxembourg/Findel",
+      trainNumber: "1059",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|431|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 23",
+        num: "1612",
+        line: "23",
+        catOut: "Bus ",
+        catIn: "AVM",
+        catCode: "5",
+        catOutS: "AVM",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 23",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:21:00",
+      date: "2016-04-09",
+      direction: "Beggen, Henri Dunant",
+      trainNumber: "1612",
+      trainCategory: "AVM"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1523|0|80|9042016"
+      },
+      Product: {
+        name: "Bus CFL",
+        num: "659",
+        line: "CFL",
+        catOut: "Bus ",
+        catIn: "CBU",
+        catCode: "5",
+        catOutS: "CBU",
+        catOutL: "Bus ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus CFL",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:21:00",
+      date: "2016-04-09",
+      direction: "Trier, Hauptbahnhof",
+      trainNumber: "659",
+      trainCategory: "CBU"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2118|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 192",
+        num: "1552",
+        line: "192",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 192",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:21:00",
+      date: "2016-04-09",
+      direction: "Hassel, Küneftchen",
+      trainNumber: "1552",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2126|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 194",
+        num: "1610",
+        line: "194",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 194",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:21:00",
+      date: "2016-04-09",
+      direction: "Bettembourg, Gare",
+      trainNumber: "1610",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|721|0|80|9042016"
+      },
+      Product: {
+        name: "RB 4707",
+        num: "4707",
+        line: "",
+        catOut: "RB ",
+        catIn: "CRB",
+        catCode: "2",
+        catOutS: "CRB",
+        catOutL: "RB ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "RB 4707",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:23:00",
+      date: "2016-04-09",
+      direction: "Athus, Gare",
+      trainNumber: "4707",
+      trainCategory: "CRB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|307|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 18",
+        num: "1399",
+        line: "18",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 18",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:24:00",
+      date: "2016-04-09",
+      direction: "Kockelscheuer, Patinoire",
+      trainNumber: "1399",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1455|2|80|9042016"
+      },
+      Product: {
+        name: "Bus CFL",
+        num: "357",
+        line: "CFL",
+        catOut: "Bus ",
+        catIn: "CBU",
+        catCode: "5",
+        catOutS: "CBU",
+        catOutL: "Bus ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus CFL",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:24:00",
+      date: "2016-04-09",
+      direction: "Diekirch, Gare",
+      trainNumber: "357",
+      trainCategory: "CBU"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3908|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 195",
+        num: "6084",
+        line: "195",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 195",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:25:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter",
+      trainNumber: "6084",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3994|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 2",
+        num: "1471",
+        line: "2",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 2",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:25:00",
+      date: "2016-04-09",
+      direction: "Limpertsberg, L.T.Michel Lucius",
+      trainNumber: "1471",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2136|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 194",
+        num: "1657",
+        line: "194",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 194",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:26:00",
+      date: "2016-04-09",
+      direction: "Sandweiler, Am Eck",
+      trainNumber: "1657",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4113|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 21",
+        num: "79",
+        line: "21",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 21",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:26:00",
+      date: "2016-04-09",
+      direction: "Eich, Centre Culturel",
+      trainNumber: "79",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|579|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 7",
+        num: "1788",
+        line: "7",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 7",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:27:00",
+      date: "2016-04-09",
+      direction: "Pulvermuhl, Hammerdällchen",
+      trainNumber: "1788",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3828|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 29",
+        num: "2029",
+        line: "29",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 29",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:29:00",
+      date: "2016-04-09",
+      direction: "Findel, Cargo Center",
+      trainNumber: "2029",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4150|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 26",
+        num: "122",
+        line: "26",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 26",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:29:00",
+      date: "2016-04-09",
+      direction: "Bertrange, Belle Etoile",
+      trainNumber: "122",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1911|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 144",
+        num: "876",
+        line: "144",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 144",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:30:00",
+      date: "2016-04-09",
+      direction: "Itzig, Hubertuspad",
+      trainNumber: "876",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2198|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 205",
+        num: "1975",
+        line: "205",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 205",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:30:00",
+      date: "2016-04-09",
+      direction: "Esch/Alzette, Gare",
+      trainNumber: "1975",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|713|0|80|9042016"
+      },
+      Product: {
+        name: "RB 5109",
+        num: "5109",
+        line: "",
+        catOut: "RB ",
+        catIn: "CRB",
+        catCode: "2",
+        catOutS: "CRB",
+        catOutL: "RB ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "RB 5109",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:31:00",
+      date: "2016-04-09",
+      direction: "Oetrange, Gare",
+      trainNumber: "5109",
+      trainCategory: "CRB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3803|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 28",
+        num: "2000",
+        line: "28",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 28",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:31:00",
+      date: "2016-04-09",
+      direction: "Bertrange, Belle Etoile",
+      trainNumber: "2000",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|572|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 7",
+        num: "1776",
+        line: "7",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 7",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:32:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter Parking",
+      trainNumber: "1776",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2123|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 192",
+        num: "1587",
+        line: "192",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 192",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:32:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter",
+      trainNumber: "1587",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3904|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 195",
+        num: "6050",
+        line: "195",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 195",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:32:00",
+      date: "2016-04-09",
+      direction: "Peppange, Duerfplaz",
+      trainNumber: "6050",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|963|0|80|9042016"
+      },
+      Product: {
+        name: "CRE 6957",
+        num: "6957",
+        line: "",
+        catOut: "CRE ",
+        catIn: "CRE",
+        catCode: "2",
+        catOutS: "CRE",
+        catOutL: "CRE ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "CRE 6957",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:33:00",
+      date: "2016-04-09",
+      direction: "Rodange, Gare",
+      trainNumber: "6957",
+      trainCategory: "CRE"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|77|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 11",
+        num: "851",
+        line: "11",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 11",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:34:00",
+      date: "2016-04-09",
+      direction: "Steinsel, Michel Rodange Plaz",
+      trainNumber: "851",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|159|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 14",
+        num: "956",
+        line: "14",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 14",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:34:00",
+      date: "2016-04-09",
+      direction: "Cents, Waassertuerm",
+      trainNumber: "956",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3842|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 29",
+        num: "2043",
+        line: "29",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 29",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:34:00",
+      date: "2016-04-09",
+      direction: "Gasperich/Howald, P+R Howald",
+      trainNumber: "2043",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|338|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 19",
+        num: "1459",
+        line: "19",
+        catOut: "Bus ",
+        catIn: "AVM",
+        catCode: "5",
+        catOutS: "AVM",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 19",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:35:00",
+      date: "2016-04-09",
+      direction: "Limpertsberg, Neumanns-Park",
+      trainNumber: "1459",
+      trainCategory: "AVM"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2116|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 192",
+        num: "1532",
+        line: "192",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 192",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:36:00",
+      date: "2016-04-09",
+      direction: "Hassel, Küneftchen",
+      trainNumber: "1532",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|143|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 13",
+        num: "938",
+        line: "13",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 13",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:37:00",
+      date: "2016-04-09",
+      direction: "Luxembourg/Strassen, Centre Hospitalier",
+      trainNumber: "938",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1027|0|80|9042016"
+      },
+      Product: {
+        name: "CRE88605",
+        num: "88605",
+        line: "",
+        catOut: "CRE ",
+        catIn: "CRE",
+        catCode: "2",
+        catOutS: "CRE",
+        catOutL: "CRE ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "CRE88605",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:38:00",
+      date: "2016-04-09",
+      direction: "Nancy, Ville",
+      trainNumber: "88605",
+      trainCategory: "CRE"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1835|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 125",
+        num: "655",
+        line: "125",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 125",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:38:00",
+      date: "2016-04-09",
+      direction: "Oberanven, Gemeng",
+      trainNumber: "655",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|357|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 2",
+        num: "1481",
+        line: "2",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 2",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:40:00",
+      date: "2016-04-09",
+      direction: "Cessange, Boy Konen",
+      trainNumber: "1481",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|502|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 4",
+        num: "88",
+        line: "4",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 4",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:40:00",
+      date: "2016-04-09",
+      direction: "Leudelange, Gemeng",
+      trainNumber: "88",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2145|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 197",
+        num: "1706",
+        line: "197",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 197",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:40:00",
+      date: "2016-04-09",
+      direction: "Ottange, Pl. de Montcontour",
+      trainNumber: "1706",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3889|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 31",
+        num: "2093",
+        line: "31",
+        catOut: "Bus ",
+        catIn: "AVM",
+        catCode: "5",
+        catOutS: "AVM",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 31",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:40:00",
+      date: "2016-04-09",
+      direction: "Strassen, Oricher-Hoehl",
+      trainNumber: "2093",
+      trainCategory: "AVM"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|292|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 18",
+        num: "1287",
+        line: "18",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 18",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:41:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Luxexpo Entrée Sud Quai 1",
+      trainNumber: "1287",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2126|5|80|9042016"
+      },
+      Product: {
+        name: "Bus 194",
+        num: "1611",
+        line: "194",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 194",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:41:00",
+      date: "2016-04-09",
+      direction: "Bettembourg, Gare",
+      trainNumber: "1611",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|234|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 16",
+        num: "1090",
+        line: "16",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 16",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "07:43:00",
+      date: "2016-04-09",
+      direction: "Hesperange, Cité Um Schlass",
+      trainNumber: "1090",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1471|2|80|9042016"
+      },
+      Product: {
+        name: "Bus CFL",
+        num: "447",
+        line: "CFL",
+        catOut: "Bus ",
+        catIn: "CBU",
+        catCode: "5",
+        catOutS: "CBU",
+        catOutL: "Bus ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus CFL",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:45:00",
+      date: "2016-04-09",
+      direction: "Arlon, Gare",
+      trainNumber: "447",
+      trainCategory: "CBU"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2136|5|80|9042016"
+      },
+      Product: {
+        name: "Bus 194",
+        num: "1658",
+        line: "194",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 194",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:46:00",
+      date: "2016-04-09",
+      direction: "Sandweiler, Am Eck",
+      trainNumber: "1658",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2122|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 192",
+        num: "1588",
+        line: "192",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 192",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:47:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter",
+      trainNumber: "1588",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|799|0|80|9042016"
+      },
+      Product: {
+        name: "RB 6857",
+        num: "6857",
+        line: "",
+        catOut: "RB ",
+        catIn: "CRB",
+        catCode: "2",
+        catOutS: "CRB",
+        catOutL: "RB ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "RB 6857",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:48:00",
+      date: "2016-04-09",
+      direction: "Rodange, Gare",
+      trainNumber: "6857",
+      trainCategory: "CRB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1442|2|80|9042016"
+      },
+      Product: {
+        name: "Bus CFL",
+        num: "240",
+        line: "CFL",
+        catOut: "Bus ",
+        catIn: "CBU",
+        catCode: "5",
+        catOutS: "CBU",
+        catOutL: "Bus ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus CFL",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:48:00",
+      date: "2016-04-09",
+      direction: "Ettelbruck, Gare",
+      trainNumber: "240",
+      trainCategory: "CBU"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4146|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 27",
+        num: "118",
+        line: "27",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 27",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:48:00",
+      date: "2016-04-09",
+      direction: "Bertrange, Belle Etoile",
+      trainNumber: "118",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|48|2|80|9042016"
+      },
+      Product: {
+        name: "Bus 10",
+        num: "819",
+        line: "10",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 10",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:49:00",
+      date: "2016-04-09",
+      direction: "Steinsel, Michel Rodange Plaz",
+      trainNumber: "819",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4051|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 9",
+        num: "1857",
+        line: "9",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 9",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:49:00",
+      date: "2016-04-09",
+      direction: "Cents, Waassertuerm",
+      trainNumber: "1857",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|162|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 14",
+        num: "961",
+        line: "14",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 14",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:50:00",
+      date: "2016-04-09",
+      direction: "Cents, Waassertuerm",
+      trainNumber: "961",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1917|5|80|9042016"
+      },
+      Product: {
+        name: "Bus 144",
+        num: "915",
+        line: "144",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 144",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:50:00",
+      date: "2016-04-09",
+      direction: "Neuhaeusgen, Iewescht Neihaischen",
+      trainNumber: "915",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|2196|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 205",
+        num: "1976",
+        line: "205",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 205",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:50:00",
+      date: "2016-04-09",
+      direction: "Esch/Alzette, Gare",
+      trainNumber: "1976",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4133|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 21",
+        num: "97",
+        line: "21",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 21",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:50:00",
+      date: "2016-04-09",
+      direction: "Eich, Centre Culturel",
+      trainNumber: "97",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|210|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 16",
+        num: "1059",
+        line: "16",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 16",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:51:00",
+      date: "2016-04-09",
+      direction: "Aéroport Luxembourg/Findel",
+      trainNumber: "1059",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|431|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 23",
+        num: "1612",
+        line: "23",
+        catOut: "Bus ",
+        catIn: "AVM",
+        catCode: "5",
+        catOutS: "AVM",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 23",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:51:00",
+      date: "2016-04-09",
+      direction: "Beggen, Henri Dunant",
+      trainNumber: "1612",
+      trainCategory: "AVM"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|718|1|80|9042016"
+      },
+      Product: {
+        name: "RB 5057",
+        num: "5057",
+        line: "",
+        catOut: "RB ",
+        catIn: "CRB",
+        catCode: "2",
+        catOutS: "CRB",
+        catOutL: "RB ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "RB 5057",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:53:00",
+      date: "2016-04-09",
+      direction: "Rodange, Gare",
+      trainNumber: "5057",
+      trainCategory: "CRB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1397|1|80|9042016"
+      },
+      Product: {
+        name: "Bus CFL",
+        num: "14",
+        line: "CFL",
+        catOut: "Bus ",
+        catIn: "CBU",
+        catCode: "5",
+        catOutS: "CBU",
+        catOutL: "Bus ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus CFL",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:53:00",
+      date: "2016-04-09",
+      direction: "Kleinbettingen, Gare",
+      trainNumber: "14",
+      trainCategory: "CBU"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1721|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 110",
+        num: "264",
+        line: "110",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 110",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:53:00",
+      date: "2016-04-09",
+      direction: "Echternach, Gare",
+      trainNumber: "264",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|307|3|80|9042016"
+      },
+      Product: {
+        name: "Bus 18",
+        num: "1399",
+        line: "18",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 18",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:54:00",
+      date: "2016-04-09",
+      direction: "Kockelscheuer, Patinoire",
+      trainNumber: "1399",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1453|3|80|9042016"
+      },
+      Product: {
+        name: "Bus CFL",
+        num: "338",
+        line: "CFL",
+        catOut: "Bus ",
+        catIn: "CBU",
+        catCode: "5",
+        catOutS: "CBU",
+        catOutL: "Bus ",
+        operatorCode: "CFL",
+        operator: "Chemins de Fer Luxembourgeois",
+        admin: "C82---"
+      },
+      name: "Bus CFL",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:54:00",
+      date: "2016-04-09",
+      direction: "Diekirch, Gare",
+      trainNumber: "338",
+      trainCategory: "CBU"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1809|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 120",
+        num: "466",
+        line: "120",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 120",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:55:00",
+      date: "2016-04-09",
+      direction: "Junglinster, Gemeng",
+      trainNumber: "466",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3909|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 195",
+        num: "6085",
+        line: "195",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 195",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:55:00",
+      date: "2016-04-09",
+      direction: "Kirchberg, Rehazenter",
+      trainNumber: "6085",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|579|1|80|9042016"
+      },
+      Product: {
+        name: "Bus 7",
+        num: "1788",
+        line: "7",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 7",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "07:57:00",
+      date: "2016-04-09",
+      direction: "Pulvermuhl, Hammerdällchen",
+      trainNumber: "1788",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1838|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 125",
+        num: "660",
+        line: "125",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 125",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:57:00",
+      date: "2016-04-09",
+      direction: "Oberanven, Gemeng",
+      trainNumber: "660",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4158|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 26",
+        num: "144",
+        line: "26",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 26",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:57:00",
+      date: "2016-04-09",
+      direction: "Bertrange, Belle Etoile",
+      trainNumber: "144",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|133|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 13",
+        num: "928",
+        line: "13",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 13",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:58:00",
+      date: "2016-04-09",
+      direction: "Luxembourg/Strassen, Centre Hospitalier",
+      trainNumber: "928",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|74|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 11",
+        num: "847",
+        line: "11",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 11",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:59:00",
+      date: "2016-04-09",
+      direction: "Steinsel, Michel Rodange Plaz",
+      trainNumber: "847",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|342|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 2",
+        num: "1463",
+        line: "2",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 2",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "07:59:00",
+      date: "2016-04-09",
+      direction: "Limpertsberg, L.T.Michel Lucius",
+      trainNumber: "1463",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3828|5|80|9042016"
+      },
+      Product: {
+        name: "Bus 29",
+        num: "2029",
+        line: "29",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 29",
+      type: "S",
+      stop: "Luxembourg, Gare routière",
+      stopid: "A=1@O=Luxembourg, Gare routière@X=6133331@Y=49599241@U=80@L=200405036@",
+      stopExtId: "200405036",
+      time: "07:59:00",
+      date: "2016-04-09",
+      direction: "Findel, Cargo Center",
+      trainNumber: "2029",
+      trainCategory: "AVS"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|1911|4|80|9042016"
+      },
+      Product: {
+        name: "Bus 144",
+        num: "877",
+        line: "144",
+        catOut: "Bus ",
+        catIn: "RGB",
+        catCode: "5",
+        catOutS: "RGB",
+        catOutL: "Bus ",
+        operatorCode: "RGT",
+        operator: "Regime General des Transports Routiers",
+        admin: "RGM---"
+      },
+      name: "Bus 144",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 103",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 103@X=6133034@Y=49599807@U=80@L=200405032@",
+      stopExtId: "200405032",
+      time: "08:00:00",
+      date: "2016-04-09",
+      direction: "Itzig, Hubertuspad",
+      trainNumber: "877",
+      trainCategory: "RGB"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|3801|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 28",
+        num: "1998",
+        line: "28",
+        catOut: "Bus ",
+        catIn: "AVG",
+        catCode: "5",
+        catOutS: "AVG",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 28",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale",
+      stopid: "A=1@O=Luxembourg, Gare Centrale@X=6133646@Y=49600670@U=80@L=200405035@",
+      stopExtId: "200405035",
+      time: "08:00:00",
+      date: "2016-04-09",
+      direction: "Bertrange, Belle Etoile",
+      trainNumber: "1998",
+      trainCategory: "AVG"
+    },
+    {
+      JourneyDetailRef: {
+        ref: "1|4134|0|80|9042016"
+      },
+      Product: {
+        name: "Bus 4",
+        num: "101",
+        line: "4",
+        catOut: "Bus ",
+        catIn: "AVS",
+        catCode: "5",
+        catOutS: "AVS",
+        catOutL: "Bus ",
+        operatorCode: "AVL",
+        operator: "Ville de Luxembourg - Service des Transports en Commun",
+        admin: "AVL---"
+      },
+      name: "Bus 4",
+      type: "S",
+      stop: "Luxembourg, Gare Centrale Quai 102",
+      stopid: "A=1@O=Luxembourg, Gare Centrale Quai 102@X=6133205@Y=49600814@U=80@L=200405002@",
+      stopExtId: "200405002",
+      time: "08:00:00",
+      date: "2016-04-09",
+      direction: "Leudelange, Gemeng",
+      trainNumber: "101",
+      trainCategory: "AVS"
+    }
+  ],
+  serverVersion: "1.0",
+  dialectVersion: "1.0"
+}
