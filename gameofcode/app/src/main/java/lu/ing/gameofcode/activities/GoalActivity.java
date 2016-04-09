@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import lu.ing.gameofcode.R;
 
 public class GoalActivity extends AppCompatActivity {
 

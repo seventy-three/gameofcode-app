@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -37,6 +37,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import lu.ing.gameofcode.utils.MySpiceService;
+import lu.ing.gameofcode.R;
+import lu.ing.gameofcode.utils.SharedPreferencesUtils;
 import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.LineBean;
 import lu.ing.gameofcode.line.VelohAlternative;

@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.requests;
 
 import android.content.Context;
 
@@ -12,7 +12,7 @@ import java.util.List;
 import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.LineBean;
 
-class LineBeansRequest extends SpiceRequest<LineBean[]> {
+public class LineBeansRequest extends SpiceRequest<LineBean[]> {
 
     private final String homeLatitude;
     private final String homeLongitude;

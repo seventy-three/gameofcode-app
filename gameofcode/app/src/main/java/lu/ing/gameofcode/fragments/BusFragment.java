@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,6 +24,10 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import lu.ing.gameofcode.requests.LineBeansRequest;
+import lu.ing.gameofcode.utils.MySpiceService;
+import lu.ing.gameofcode.R;
+import lu.ing.gameofcode.utils.SharedPreferencesUtils;
 import lu.ing.gameofcode.line.BusStop;
 import lu.ing.gameofcode.line.LineBean;
 import lu.ing.gameofcode.line.LineBeanSorter;

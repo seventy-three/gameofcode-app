@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +16,9 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import lu.ing.gameofcode.R;
+import lu.ing.gameofcode.fragments.BusFragment;
+import lu.ing.gameofcode.fragments.VelohFragment;
 
 public class PlanningActivity extends AppCompatActivity {
 

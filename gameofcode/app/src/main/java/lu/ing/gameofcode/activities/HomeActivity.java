@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.activities;
 
 
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.crashlytics.android.Crashlytics;
 
 import io.fabric.sdk.android.Fabric;
+import lu.ing.gameofcode.utils.SharedPreferencesUtils;
 
 public class HomeActivity extends AppCompatActivity {
 

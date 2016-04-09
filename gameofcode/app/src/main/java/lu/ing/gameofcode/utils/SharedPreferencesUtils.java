@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.utils;
 
 import android.content.SharedPreferences;
 

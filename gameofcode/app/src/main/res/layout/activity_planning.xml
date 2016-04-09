@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lu.ing.gameofcode.PlanningActivity">
+    tools:context=".activities.PlanningActivity">
 
     <RelativeLayout
         android:id="@+id/sunny"
@@ -13,7 +13,7 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="lu.ing.gameofcode.BusFragment" />
+            android:name="lu.ing.gameofcode.fragments.BusFragment" />
 
         <ProgressBar
             android:id="@+id/loading_pb"
