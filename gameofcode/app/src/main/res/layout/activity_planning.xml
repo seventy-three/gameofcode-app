@@ -15,6 +15,13 @@
             android:layout_height="match_parent"
             android:name="lu.ing.gameofcode.BusFragment" />
 
+        <ProgressBar
+            android:id="@+id/loading_pb"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -44,5 +51,7 @@
             tools:text="Aujourd'hui il pleut reposez-vous. Pensez à prendre votre parapluie" />
 
     </RelativeLayout>
+
+
 
 </FrameLayout>

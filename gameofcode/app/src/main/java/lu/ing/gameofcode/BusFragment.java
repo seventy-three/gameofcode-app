@@ -6,31 +6,27 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
-import com.octo.android.robospice.request.SpiceRequest;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.BusStop;
 import lu.ing.gameofcode.line.LineBean;
+import lu.ing.gameofcode.line.LineBeanSorter;
 
 public class BusFragment extends Fragment {
 
@@ -40,10 +36,10 @@ public class BusFragment extends Fragment {
     @Bind(R.id.buslines_sp)
     Spinner busLinesSpinner;
 
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private SpiceManager spiceManager = new SpiceManager(MySpiceService.class);;
+    @Bind(R.id.loading_pb)
+    ProgressBar loadingView;
 
+    private SpiceManager spiceManager = new SpiceManager(MySpiceService.class);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,10 +47,43 @@ public class BusFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_bus, container, false);
         ButterKnife.bind(this, rootView);
 
-        mLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyAdapter(new BusStop[] {
+        return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        spiceManager.start(getContext());
+        loadBusLines();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
+    }
+
+    private void loadBusLines() {
+        showLoading();
+        SharedPreferences preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        final String homeLongitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "homeLongitude", 0));
+        final String homeLatitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "homeLatitude", 0));
+        final String workLongitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "workLongitude", 0));
+        final String workLatitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "workLatitude", 0));
+
+        final LineBeansRequest request = new LineBeansRequest(getContext(),
+                homeLatitude, homeLongitude,
+                workLatitude, workLongitude);
+        spiceManager.execute(request, new BusLinesRequestListener());
+    }
+
+    private void loadBusStops() {
+        showLoading();
+        
+        RecyclerView.Adapter mAdapter = new MyAdapter(new BusStop[]{
                 createBusStop("Arret 1", "35 min de marche", false),
                 createBusStop("Arret 2", "30 min de marche", false),
                 createBusStop("Arret 3", "25 min de marche", false),
@@ -63,63 +92,16 @@ public class BusFragment extends Fragment {
                 createBusStop("Arret 6", "10 min de marche", false)
         });
         mRecyclerView.setAdapter(mAdapter);
-
-        return rootView;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+    private void showLoading() {
+        loadingView.setVisibility(View.VISIBLE);
+        mRecyclerView.setVisibility(View.GONE);
+    }
 
-        spiceManager.start(getContext());
-
-        // lignes disponibles du point de depart à l'arrivée
-        SharedPreferences preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
-
-        final String homeLongitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "homeLongitude", 0));
-        final String homeLatitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "homeLatitude", 0));
-        final String workLongitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "workLongitude", 0));
-        final String workLatitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "workLatitude", 0));
-
-        spiceManager.execute(new SpiceRequest<LineBean[]>(LineBean[].class) {
-            @Override
-            public LineBean[] loadDataFromNetwork() throws Exception {
-                try {
-                    final BusLine line = new BusLine(getContext());
-                    final LineBean[] startList = line.getAvailableLines(homeLatitude, homeLongitude);
-                    final LineBean[] endList = line.getAvailableLines(workLatitude, workLongitude);
-                    List<LineBean> matchList = new ArrayList<>();
-                    for (final LineBean lineS : startList){
-                        if(null!=lineS.getNum()) {
-                            for (final LineBean lineE : endList) {
-                                if (lineS.getNum().equals(lineE.getNum())){
-                                    matchList.add(lineE);
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    return Arrays.copyOf(matchList.toArray(), matchList.size(), LineBean[].class);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-        }, new RequestListener<LineBean[]>() {
-            @Override
-            public void onRequestFailure(SpiceException spiceException) {
-                Log.d("MAIN","getAvailableLines Failure");
-            }
-            @Override
-            public void onRequestSuccess(LineBean[] lines) {
-                Log.d("MAIN","getAvailableLines Success nb matched="+lines.length);
-                for (final LineBean line : lines) {
-                    Log.d("MAIN", "getAvailableLines LINE N°"+line.getNum());
-                }
-                setupBusLinesSpinner(Arrays.asList(lines));
-            }
-        });
+    private void hideLoading() {
+        loadingView.setVisibility(View.GONE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void setupBusLinesSpinner(List<LineBean> lineBeen) {
@@ -127,12 +109,6 @@ public class BusFragment extends Fragment {
         final ArrayAdapter<LineBean> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, lineBeen);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         busLinesSpinner.setAdapter(adapter);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        spiceManager.shouldStop();
     }
 
     public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -158,9 +134,7 @@ public class BusFragment extends Fragment {
                                                        int viewType) {
             View v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.list_item_timeline, parent, false);
-
-            ViewHolder vh = new ViewHolder(v);
-            return vh;
+            return new ViewHolder(v);
         }
 
         @Override
@@ -176,13 +150,6 @@ public class BusFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mDataset.length;
-        }
-    }
-
-    private class LineBeanSorter implements Comparator<LineBean> {
-        @Override
-        public int compare(LineBean lhs, LineBean rhs) {
-            return lhs.getNum().compareTo(rhs.getNum());
         }
     }
 
@@ -203,5 +170,18 @@ public class BusFragment extends Fragment {
                 return stop;
             }
         };
+    }
+
+    private class BusLinesRequestListener implements RequestListener<LineBean[]> {
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+            hideLoading();
+        }
+
+        @Override
+        public void onRequestSuccess(LineBean[] lines) {
+            hideLoading();
+            setupBusLinesSpinner(Arrays.asList(lines));
+        }
     }
 }

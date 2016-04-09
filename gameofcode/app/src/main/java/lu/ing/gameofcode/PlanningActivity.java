@@ -25,24 +25,11 @@ public class PlanningActivity extends AppCompatActivity {
     @Bind(R.id.rainy)
     RelativeLayout rainyLayout;
 
-//    @Bind(R.id.tabs)
-//    TabLayout tabLayout;
-//    @Bind(R.id.viewpager)
-//    ViewPager viewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planning);
         ButterKnife.bind(this);
-
-//        viewPager = (ViewPager) findViewById(R.id.viewpager);
-//        setupViewPager(viewPager);
-//
-//        tabLayout = (TabLayout) findViewById(R.id.tabs);
-//        if (tabLayout != null) {
-//            tabLayout.setupWithViewPager(viewPager);
-//        }
 
         boolean raining = true;
         if (RandomUtils.nextInt(0, 100) > 50) {
