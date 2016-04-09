@@ -51,8 +51,6 @@ public class BusFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_bus, container, false);
         ButterKnife.bind(this, rootView);
 
-        mRecyclerView.setHasFixedSize(true);
-
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 

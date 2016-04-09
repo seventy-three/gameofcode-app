@@ -1,7 +1,6 @@
 package lu.ing.gameofcode;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -26,10 +25,10 @@ public class PlanningActivity extends AppCompatActivity {
     @Bind(R.id.rainy)
     RelativeLayout rainyLayout;
 
-    @Bind(R.id.tabs)
-    TabLayout tabLayout;
-    @Bind(R.id.viewpager)
-    ViewPager viewPager;
+//    @Bind(R.id.tabs)
+//    TabLayout tabLayout;
+//    @Bind(R.id.viewpager)
+//    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +36,13 @@ public class PlanningActivity extends AppCompatActivity {
         setContentView(R.layout.activity_planning);
         ButterKnife.bind(this);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        if (tabLayout != null) {
-            tabLayout.setupWithViewPager(viewPager);
-        }
+//        viewPager = (ViewPager) findViewById(R.id.viewpager);
+//        setupViewPager(viewPager);
+//
+//        tabLayout = (TabLayout) findViewById(R.id.tabs);
+//        if (tabLayout != null) {
+//            tabLayout.setupWithViewPager(viewPager);
+//        }
 
         boolean raining = true;
         if (RandomUtils.nextInt(0, 100) > 50) {
