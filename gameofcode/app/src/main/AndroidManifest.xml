@@ -37,6 +37,11 @@
 
         <activity android:name=".GoalActivity"
             android:label="@string/goal_title"></activity>
+
+
+        <service
+            android:name=".MySpiceService"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -25,12 +25,20 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.octo.android.robospice.SpiceManager;
+import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.octo.android.robospice.request.SpiceRequest;
+import com.octo.android.robospice.request.listener.RequestListener;
+
+import java.io.IOException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 import lu.ing.gameofcode.line.BusLine;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 public class MainActivity extends AppCompatActivity
         implements
@@ -43,6 +51,7 @@ public class MainActivity extends AppCompatActivity
     private Location userLocation;
     private GoogleApiClient googleApiClient;
     private boolean selectingHome = true;
+    private SpiceManager spiceManager = new SpiceManager(MySpiceService.class);;
 
     @Bind(R.id.select_btn)
     Button selectButton;
@@ -66,13 +75,57 @@ public class MainActivity extends AppCompatActivity
         googleApiClient.connect();
 
         /////////////////////////////////////////////////////
-        BusLine line = new BusLine(this);
-        try {
-            line.getAvailableLines("49599457","6132893");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        BusLine line = new BusLine(this);
+//        try {
+//            line.getAvailableLines("49599457","6132893");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         /////////////////////////////////////////////////////
+        final OkHttpClient client = new OkHttpClient();
+
+        // Create request for remote resource.
+        final Request request = new Request.Builder()
+                .url("http://google.com")
+                .build();
+
+        // Execute the request and retrieve the response.
+
+
+        spiceManager.execute(new SpiceRequest<String>(String.class) {
+            @Override
+            public String loadDataFromNetwork() throws Exception {
+                try {
+                    return client.newCall(request).execute().body().string();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }, new RequestListener<String>() {
+            @Override
+            public void onRequestFailure(SpiceException spiceException) {
+
+            }
+
+            @Override
+            public void onRequestSuccess(String s) {
+                Log.d("MAIN", s);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
     }
 
     @Override
