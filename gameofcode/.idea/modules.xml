@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/gameofcode.iml" filepath="$PROJECT_DIR$/gameofcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/geojsonindexer/geojsonindexer.iml" filepath="$PROJECT_DIR$/geojsonindexer/geojsonindexer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/geojsonindexer/geojsonindexer.iml" filepath="$PROJECT_DIR$/geojsonindexer/geojsonindexer.iml" />
     </modules>
   </component>
 </project>

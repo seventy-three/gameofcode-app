@@ -17,7 +17,6 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -27,6 +26,7 @@ import java.util.List;
 public class GeoJsonParser {
 
     public static final boolean LOAD_FROM_WEB = false;
+    public static final boolean LOAD_FROM_ASSET = true;
     public static final String BASE_URL = "http://opendata.vdl.lu/odaweb/";
     public static final String URL_LIST = BASE_URL + "?describe=1";
     public static final String URL_ITEM = BASE_URL + "?cat=";
@@ -76,7 +76,6 @@ public class GeoJsonParser {
         return geoDatas;
     }
 
-
     private void computeDistance(GeoJsonItemPath path) {
         long distance = 0;
         long x = -1, y = -1;
@@ -117,6 +116,10 @@ public class GeoJsonParser {
             writer.append(result);
             writer.close();
             System.out.println("Write to file: " + path.toAbsolutePath());
+        } else if (LOAD_FROM_ASSET) {
+            // Load from asset
+            result = new String(Files.readAllBytes(path));
+            System.out.println("Read from asset: " + path.toAbsolutePath());
         } else {
             // Load from file
             result = new String(Files.readAllBytes(path));
