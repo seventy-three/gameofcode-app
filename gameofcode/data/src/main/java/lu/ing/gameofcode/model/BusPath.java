@@ -6,15 +6,15 @@ package lu.ing.gameofcode.model;
 public class BusPath {
 
     BusStop parentBusStop;
-    long latitude;
-    long longitude;
+    double latitude;
+    double longitude;
     int altitude;
-    long distance;
-    int caloriesFoot;
-    int caloriesBike;
-    int timeBus;
-    int timeFoot;
-    int timeBike;
+    double distance;
+    double caloriesFoot;
+    double caloriesBike;
+    double timeBus;
+    double timeFoot;
+    double timeBike;
 
     public BusPath() {
     }
@@ -27,19 +27,19 @@ public class BusPath {
         return parentBusStop;
     }
 
-    public long getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
@@ -51,51 +51,51 @@ public class BusPath {
         this.altitude = altitude;
     }
 
-    public long getDistance() {
+    public double getDistance() {
         return distance;
     }
 
-    public void setDistance(long distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
-    public int getCaloriesFoot() {
+    public double getCaloriesFoot() {
         return caloriesFoot;
     }
 
-    public void setCaloriesFoot(int caloriesFoot) {
+    public void setCaloriesFoot(double caloriesFoot) {
         this.caloriesFoot = caloriesFoot;
     }
 
-    public int getCaloriesBike() {
+    public double getCaloriesBike() {
         return caloriesBike;
     }
 
-    public void setCaloriesBike(int caloriesBike) {
+    public void setCaloriesBike(double caloriesBike) {
         this.caloriesBike = caloriesBike;
     }
 
-    public int getTimeBus() {
+    public double getTimeBus() {
         return timeBus;
     }
 
-    public void setTimeBus(int timeBus) {
+    public void setTimeBus(double timeBus) {
         this.timeBus = timeBus;
     }
 
-    public int getTimeFoot() {
+    public double getTimeFoot() {
         return timeFoot;
     }
 
-    public void setTimeFoot(int timeFoot) {
+    public void setTimeFoot(double timeFoot) {
         this.timeFoot = timeFoot;
     }
 
-    public int getTimeBike() {
+    public double getTimeBike() {
         return timeBike;
     }
 
-    public void setTimeBike(int timeBike) {
+    public void setTimeBike(double timeBike) {
         this.timeBike = timeBike;
     }
 

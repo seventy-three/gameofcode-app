@@ -5,28 +5,19 @@ package lu.ing.gameofcode.geojson;
  */
 public class UnitsConvertor {
 
-
-    public static long luxLatitudeToGps(long luxLatitude) {
-        return luxLatitude / 10000000000L;
+    public static double distanceLuxToMeters(double distanceLux) {
+        return distanceLux;
     }
 
-    public static long luxLongitudeToGps(long luxLongitude) {
-        return luxLongitude / 10000000000L;
+    public static double distanceToTimeFoot(double distance) {
+        return distance / 0.75d;
     }
 
-    public static long distanceLuxToMeters(long distanceLux) {
-        return distanceLux / 10000000000L;
+    public static double distanceToTimeBus(double distance) {
+        return distance / 14d;
     }
 
-    public static int distanceToTimeFoot(long distance) {
-        return (int) (((double) distance) / 0.75d);
-    }
-
-    public static int distanceToTimeBus(long distance) {
-        return (int) (((double) distance) / 14d);
-    }
-
-    public static int distanceToTimeBike(long distance) {
-        return (int) (((double) distance) / 8.3d);
+    public static double distanceToTimeBike(double distance) {
+        return distance / 8.3d;
     }
 }

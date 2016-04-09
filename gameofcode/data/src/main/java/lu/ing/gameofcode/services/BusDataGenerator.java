@@ -57,6 +57,146 @@ public class BusDataGenerator {
     }
 
     public BusData getBusData() {
+
+        for (BusPath path : busData.getPaths()) {
+            String name = path.getParentBusStop().getName();
+            if ("Luxexpo Entrée Sud Quai 3".equals(name)) {
+                path.setLatitude(6.170159);
+                path.setLongitude(49.634316);
+            } else if ("Poutty Stein".equals(name)) {
+                path.setLatitude(6.168955);
+                path.setLongitude(49.635584);
+            } else if ("Mathias Tresch".equals(name)) {
+                path.setLatitude(6.16917);
+                path.setLongitude(49.637525);
+            } else if ("Léon Thyes".equals(name)) {
+                path.setLatitude(6.165017);
+                path.setLongitude(49.637292);
+            } else if ("Avalon Quai 2".equals(name)) {
+                path.setLatitude(6.161368);
+                path.setLongitude(49.632635);
+            } else if ("Konrad Adenauer".equals(name)) {
+                path.setLatitude(6.157332);
+                path.setLongitude(49.629615);
+            } else if ("Antoine de St Exupéry".equals(name)) {
+                path.setLatitude(6.151489);
+                path.setLongitude(49.627179);
+            } else if ("Jean Monnet".equals(name)) {
+                path.setLatitude(6.145385);
+                path.setLongitude(49.62477);
+            } else if ("B.E.I.".equals(name)) {
+                path.setLatitude(6.13885);
+                path.setLongitude(49.620077);
+            } else if ("Fondation Pescatore Quai 2".equals(name)) {
+                path.setLatitude(6.126768);
+                path.setLongitude(49.615664);
+            } else if ("Hamilius Quai 2".equals(name)) {
+                path.setLatitude(6.126049);
+                path.setLongitude(49.610971);
+            } else if ("Martyrs Quai 2".equals(name)) {
+                path.setLatitude(6.128512);
+                path.setLongitude(49.60654);
+            } else if ("Paris / Zitha Quai 3".equals(name)) {
+                path.setLatitude(6.130778);
+                path.setLongitude(49.603843);
+            } else if ("Gare Centrale Quai 102".equals(name)) {
+                path.setLatitude(6.133205);
+                path.setLongitude(49.600814);
+            } else if ("Alsace".equals(name)) {
+                path.setLatitude(6.131119);
+                path.setLongitude(49.596472);
+            } else if ("Lascombes".equals(name)) {
+                path.setLatitude(6.125519);
+                path.setLongitude(49.59426);
+            } else if ("Hollerich, Gare".equals(name)) {
+                path.setLatitude(6.120988);
+                path.setLongitude(49.595141);
+            } else if ("Gaasperecherbierg".equals(name)) {
+                path.setLatitude(6.116988);
+                path.setLongitude(49.593038);
+            } else if ("Plantin".equals(name)) {
+                path.setLatitude(6.116422);
+                path.setLongitude(49.589739);
+            } else if ("Cloche d'Or".equals(name)) {
+                path.setLatitude(6.115334);
+                path.setLongitude(49.583446);
+            } else if ("Scharfen Eck".equals(name)) {
+                path.setLatitude(6.112988);
+                path.setLongitude(49.579446);
+            } else if ("Kockelscheuer, Camping".equals(name)) {
+                path.setLatitude(6.113213);
+                path.setLongitude(49.573226);
+            } else if ("Kockelscheuer, Patinoire".equals(name)) {
+                path.setLatitude(6.108538);
+                path.setLongitude(49.565369);
+            } else if ("Kockelscheuer, Camping".equals(name)) {
+                path.setLatitude(6.113213);
+                path.setLongitude(49.573226);
+            } else if ("Scharfen Eck".equals(name)) {
+                path.setLatitude(6.112988);
+                path.setLongitude(49.579446);
+            } else if ("Cloche d'Or".equals(name)) {
+                path.setLatitude(6.115334);
+                path.setLongitude(49.583446);
+            } else if ("Raiffeisen".equals(name)) {
+                path.setLatitude(6.116907);
+                path.setLongitude(49.586673);
+            } else if ("Plantin".equals(name)) {
+                path.setLatitude(6.116422);
+                path.setLongitude(49.589739);
+            } else if ("Gaasperecherbierg".equals(name)) {
+                path.setLatitude(6.115338);
+                path.setLongitude(49.583449);
+            } else if ("Hollerich, Gare".equals(name)) {
+                path.setLatitude(6.120988);
+                path.setLongitude(49.595141);
+            } else if ("Lascombes".equals(name)) {
+                path.setLatitude(6.125519);
+                path.setLongitude(49.59426);
+            } else if ("Alsace".equals(name)) {
+                path.setLatitude(6.131119);
+                path.setLongitude(49.596472);
+            } else if ("Gare Centrale Quai 1".equals(name)) {
+                path.setLatitude(6.133034);
+                path.setLongitude(49.599807);
+            } else if ("Paris / Zitha Quai 1".equals(name)) {
+                path.setLatitude(6.130778);
+                path.setLongitude(49.603843);
+            } else if ("Martyrs Quai 1".equals(name)) {
+                path.setLatitude(6.126049);
+                path.setLongitude(49.610971);
+            } else if ("Hamilius Quai 1".equals(name)) {
+                path.setLatitude(6.126049);
+                path.setLongitude(49.610971);
+            } else if ("Fondation Pescatore Quai 1".equals(name)) {
+                path.setLatitude(6.126768);
+                path.setLongitude(49.615664);
+            } else if ("B.E.I.".equals(name)) {
+                path.setLatitude(6.13885);
+                path.setLongitude(49.620077);
+            } else if ("Jean Monnet".equals(name)) {
+                path.setLatitude(6.145385);
+                path.setLongitude(49.62477);
+            } else if ("Antoine de St Exupéry".equals(name)) {
+                path.setLatitude(6.151489);
+                path.setLongitude(49.627179);
+            } else if ("Konrad Adenauer".equals(name)) {
+                path.setLatitude(6.157332);
+                path.setLongitude(49.629615);
+            } else if ("Avalon Quai 1".equals(name)) {
+                path.setLatitude(6.161368);
+                path.setLongitude(49.632635);
+            } else if ("Léon Thyes".equals(name)) {
+                path.setLatitude(6.165017);
+                path.setLongitude(49.637292);
+            } else if ("Mathias Tresch".equals(name)) {
+                path.setLatitude(6.16917);
+                path.setLongitude(49.637525);
+            } else if ("Poutty Stein".equals(name)) {
+                path.setLatitude(6.168955);
+                path.setLongitude(49.635584);
+            }
+        }
         return busData;
     }
 
@@ -67,6 +207,10 @@ public class BusDataGenerator {
                 BusLine busLine = interpretBusLine(geoJsonData);
                 convertUnits(busLine);
                 busData.addLine(busLine);
+                for (BusStop stop  : busLine.getWay()) {
+                    busData.addPath(stop.getPath());
+                }
+
             }
         }
 

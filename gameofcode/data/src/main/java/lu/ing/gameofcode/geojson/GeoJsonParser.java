@@ -83,11 +83,11 @@ public class GeoJsonParser {
 
     private void computeDistance(GeoJsonItemPath path) {
         long distance = 0;
-        long x = -1, y = -1;
+        double x = -1, y = -1;
         for (GeoJsonItemPath.GeoJsonItemPoint point : path.getPoints()) {
             if (x != - 1 && y != -1) {
-                double segX = (double) Math.abs(point.getLongitude() - x);
-                double segY = (double) Math.abs(point.getLatitude() - y);
+                double segX = Math.abs(point.getLongitude() - x);
+                double segY = Math.abs(point.getLatitude() - y);
                 distance += Math.sqrt(segX * segX + segY * segY);
             }
             x = point.getLongitude();
@@ -102,8 +102,8 @@ public class GeoJsonParser {
                 GeoJsonItemPath path = GeoJsonItemPath.class.cast(item);
                 path.setDistance(UnitsConvertor.distanceLuxToMeters(path.getDistance()));
                 for (GeoJsonItemPath.GeoJsonItemPoint point : path.getPoints()) {
-                    point.setLatitude(UnitsConvertor.luxLatitudeToGps(point.getLatitude()));
-                    point.setLongitude(UnitsConvertor.luxLongitudeToGps(point.getLongitude()));
+                    point.setLatitude(point.getLatitude());
+                    point.setLongitude(point.getLongitude());
                 }
             } else if (item instanceof GeoJsonItemPlace) {
                 // TODO
@@ -166,8 +166,8 @@ public class GeoJsonParser {
                 JsonElement geometry = ((JsonObject) data).get("geometry");
                 JsonElement pt = ((JsonObject) geometry).get("coordinates").getAsJsonArray();
                 GeoJsonItemPlace path = new GeoJsonItemPlace(name,
-                        (long) ((JsonArray) pt).get(0).getAsDouble() * 12,
-                        (long) (((JsonArray) pt).get(1).getAsDouble() * 12));
+                        100000 - ((JsonArray) pt).get(0).getAsDouble(),
+                        80000 - ((JsonArray) pt).get(1).getAsDouble());
                 items.add(path);
             }
             return items;
@@ -187,15 +187,15 @@ public class GeoJsonParser {
                 switch (type) {
                     case "LineString":
                         for (JsonElement pt : ((JsonObject) geometry).get("coordinates").getAsJsonArray()) {
-                            path.addPoint((long) ((JsonArray) pt).get(0).getAsDouble() * 10000000000L,
-                                    (long) (((JsonArray) pt).get(1).getAsDouble()) * 10000000000L);
+                            path.addPoint(100000 - ((JsonArray) pt).get(0).getAsDouble(),
+                                    80000 - (((JsonArray) pt).get(1).getAsDouble()));
                         }
                         computeDistance(path);
                         break;
                     case "Point":
                         JsonElement pt = ((JsonObject) geometry).get("coordinates").getAsJsonArray();
-                        path.addPoint((long) ((JsonArray) pt).get(0).getAsDouble() * 10000000000L,
-                                (long) (((JsonArray) pt).get(1).getAsDouble()) * 10000000000L);
+                        path.addPoint(100000 - ((JsonArray) pt).get(0).getAsDouble(),
+                                80000 - (((JsonArray) pt).get(1).getAsDouble()));
                         break;
                 }
             }

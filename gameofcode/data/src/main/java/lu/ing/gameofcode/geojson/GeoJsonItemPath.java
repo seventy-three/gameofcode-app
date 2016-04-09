@@ -9,7 +9,7 @@ import java.util.LinkedList;
 public class GeoJsonItemPath extends GeoJsonItem {
 
     private Deque<GeoJsonItemPoint> points = new LinkedList<>();
-    private long distance = 0;
+    private double distance = 0;
     private long elevationGain;
     private long verticalDrop;
 
@@ -20,7 +20,7 @@ public class GeoJsonItemPath extends GeoJsonItem {
         super(name);
     }
 
-    public void addPoint(long longitude, long latitude) {
+    public void addPoint(double longitude, double latitude) {
         points.add(new GeoJsonItemPoint(longitude, latitude));
     }
 
@@ -28,11 +28,11 @@ public class GeoJsonItemPath extends GeoJsonItem {
         return points;
     }
 
-    public long getDistance() {
+    public double getDistance() {
         return distance;
     }
 
-    public void setDistance(long distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
@@ -53,31 +53,31 @@ public class GeoJsonItemPath extends GeoJsonItem {
     }
 
     public class GeoJsonItemPoint {
-        private long longitude;
-        private long latitude;
+        private double longitude;
+        private double latitude;
         private int altitude;
 
         public GeoJsonItemPoint() {
         }
 
-        public GeoJsonItemPoint(long longitude, long latitude) {
+        public GeoJsonItemPoint(double longitude, double latitude) {
             this.longitude = longitude;
             this.latitude = latitude;
         }
 
-        public void setLongitude(long longitude) {
+        public void setLongitude(double longitude) {
             this.longitude = longitude;
         }
 
-        public long getLongitude() {
+        public double getLongitude() {
             return longitude;
         }
 
-        public void setLatitude(long latitude) {
+        public void setLatitude(double latitude) {
             this.latitude = latitude;
         }
 
-        public long getLatitude() {
+        public double getLatitude() {
             return latitude;
         }
 
@@ -96,14 +96,18 @@ public class GeoJsonItemPath extends GeoJsonItem {
 
             GeoJsonItemPoint that = (GeoJsonItemPoint) o;
 
-            return longitude == that.longitude && latitude == that.latitude;
+            return Double.compare(that.longitude, longitude) == 0 && Double.compare(that.latitude, latitude) == 0;
 
         }
 
         @Override
         public int hashCode() {
-            int result = (int) (longitude ^ (longitude >>> 32));
-            result = 31 * result + (int) (latitude ^ (latitude >>> 32));
+            int result;
+            long temp;
+            temp = Double.doubleToLongBits(longitude);
+            result = (int) (temp ^ (temp >>> 32));
+            temp = Double.doubleToLongBits(latitude);
+            result = 31 * result + (int) (temp ^ (temp >>> 32));
             return result;
         }
 

@@ -5,32 +5,32 @@ package lu.ing.gameofcode.geojson;
  */
 public class GeoJsonItemPlace extends GeoJsonItem {
 
-    private long longitude;
-    private long latitude;
+    private double longitude;
+    private double latitude;
     private long altitude;
 
     public GeoJsonItemPlace() {
     }
 
-    public GeoJsonItemPlace(String name, long longitude, long latitude) {
+    public GeoJsonItemPlace(String name, double longitude, double latitude) {
         super(name);
         this.longitude = longitude;
         this.latitude = latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public long getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 

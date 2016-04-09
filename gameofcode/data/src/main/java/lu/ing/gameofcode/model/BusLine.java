@@ -10,7 +10,6 @@ public class BusLine {
     String code;
     String name;
     List<BusStop> way;
-    List<BusStop> way2;
 
     public String getCode() {
         return code;

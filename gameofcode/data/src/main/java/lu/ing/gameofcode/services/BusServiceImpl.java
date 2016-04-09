@@ -11,6 +11,7 @@ import lu.ing.gameofcode.geojson.GeoJsonData;
 import lu.ing.gameofcode.geojson.GeoJsonParser;
 import lu.ing.gameofcode.model.BusData;
 import lu.ing.gameofcode.model.BusLine;
+import lu.ing.gameofcode.model.BusPath;
 import lu.ing.gameofcode.model.BusStop;
 
 /**
@@ -42,7 +43,7 @@ public class BusServiceImpl implements BusService {
     }
 
     @Override
-    public List<BusStop> getBusStops(final String busLineNumber, LatLng start, LatLng stop) {
+    public List<BusStop> getBusStops(String busLineNumber, LatLng start, LatLng stop) {
         initBusData();
         for (BusLine line : busData.getLines()) {
             if (busLineNumber.equals(line.getCode())) {
