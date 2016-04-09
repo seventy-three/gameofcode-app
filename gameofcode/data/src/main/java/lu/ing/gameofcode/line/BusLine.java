@@ -40,8 +40,14 @@ public class BusLine {
     // &look_maxdist=300
     // &look_x=6132893&look_y=49599457
 
-    private static final String ENDPOINT_DEPARTURE = "http://travelplanner.mobiliteit.lu/restproxy/performLocating?accessId=cdt&format=json&time=07:00";
+    private static final String ENDPOINT_DEPARTURE = "http://travelplanner.mobiliteit.lu/restproxy/departureBoard?accessId=cdt&format=json&time=07:00";
     private static final String ENDPOINT_STOP = "http://travelplanner.mobiliteit.lu/hafas/query.exe/dot?performLocating=2&tpl=stop2csv&stationProxy=yes";
+
+    /**
+     * Constructeur.
+     */
+    public BusLine() {
+    }
 
     /**
      * Constructeur.
@@ -158,19 +164,20 @@ public class BusLine {
                 else{
                     charStream = body.charStream();
                 }
-                BufferedReader br = new BufferedReader(charStream);
+
+                /*BufferedReader br = new BufferedReader(charStream);
                 String cline;
                 while ((cline = br.readLine()) != null) {
                     System.out.println(cline);
-                    Log.d("CACA", "getAvailableLines: "+cline);
-                }
+                    //Log.d("CACA", "getAvailableLines: "+cline);
+                }*/
 
-/*                final Gson gson = gsonBuilder.create();
+                final Gson gson = gsonBuilder.create();
                 final List<LineBean> lineList = gson.fromJson(charStream, LineJsonDataType);
                 for (final LineBean line:lineList){
                     mlines.put(line.getNum(),line);
-                    System.out.println(line.getNum());
-                }*/
+                    System.out.println("num="+line.getNum());
+                }
             }
             items.addAll(mlines.values());
         }
@@ -184,14 +191,27 @@ public class BusLine {
             final Map<String,LineBean> lines = new HashMap<>();
             for (final JsonElement departure : ((JsonObject) json).get("Departure").getAsJsonArray()) {
                 JsonObject product = (JsonObject)((JsonObject) departure).get("Product");
-                final String num = ((JsonObject) product.get("num")).getAsString();
+                final String num = product.get("line").getAsString();
                 if (null==lines.get(num)){
-                    final String name = ((JsonObject) product.get("name")).getAsString();
-                    final String catIn = ((JsonObject) product.get("catIn")).getAsString();
+
+                    final String name = product.get("name").getAsString();
+                    final String catIn = product.get("catIn").getAsString();
+
+                    final String stopid = ((JsonObject) departure).get("stopid").getAsString();
+                    final String stopExtId = ((JsonObject) departure).get("stopExtId").getAsString();
+
                     final LineBean line = new LineBean();
                     line.setNum(num);
                     line.setName(name);
                     line.setCatIn(catIn);
+                    line.setStopId(stopid);
+                    line.setStopExtId(stopExtId);
+                    final String[] token = stopid.split("@");
+                    if (token.length>3){
+                        line.setLongitude(token[2]);
+                        line.setLatitude(token[3]);
+                    }
+
                     lines.put(num,line);
                 }
             }
@@ -205,8 +225,8 @@ public class BusLine {
      * @param args
      * @throws Exception
      */
-    /*public static void main(String... args) throws Exception {
+    public static void main(String... args) throws Exception {
         BusLine bl = new BusLine();
         bl.getAvailableLines("49599457","6132893");
-    }*/
+    }
 }
