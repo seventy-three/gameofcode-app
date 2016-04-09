@@ -29,7 +29,7 @@ import java.util.Scanner;
 public class GeoJsonParser {
 
     public static final boolean LOAD_FROM_WEB = false;
-    public static final boolean LOAD_FROM_ASSET = false;
+    public static final boolean LOAD_FROM_ASSET = true;
     public static final String BASE_URL = "http://opendata.vdl.lu/odaweb/";
     public static final String URL_LIST = BASE_URL + "?describe=1";
     public static final String URL_ITEM = BASE_URL + "?cat=";
@@ -50,17 +50,17 @@ public class GeoJsonParser {
 
         for (GeoJsonData geoData : geoDatas) {
             String itemName = geoData.getName();
-            System.out.print("Loading \"" + itemName + "\"... ");
+//            System.out.print("Loading \"" + itemName + "\"... ");
             String itemData = loadUrl(URL_ITEM + geoData.getId(), context);
 
             switch (geoData.getType()) {
                 case BUS_LINE:
                     geoData.setItems((List<? extends GeoJsonItem>) gson.fromJson(itemData, geoJsonItemPathType));
-                    System.out.println("Ok");
+//                    System.out.println("Ok");
                     break;
                 case BIKE_ROAD:
                     geoData.setItems((List<? extends GeoJsonItem>) gson.fromJson(itemData, geoJsonItemPathType));
-                    System.out.println("Ok");
+//                    System.out.println("Ok");
                     break;
                 case OUTSIDE_PARKING:
                 case MOTO_PARKING:
@@ -71,7 +71,7 @@ public class GeoJsonParser {
                 case PARK_AND_BIKE:
                 case FUNTAINS:
                     geoData.setItems((List<? extends GeoJsonItem>) gson.fromJson(itemData, geoJsonItemPlaceType));
-                    System.out.println("Ok (items=" + geoData.getItems().size() + ")");
+//                    System.out.println("Ok (items=" + geoData.getItems().size() + ")");
                     break;
             }
 
@@ -147,7 +147,7 @@ public class GeoJsonParser {
             }
             result = buffer.toString();
             reader.close();
-            System.out.println("Read from asset: " + path.getAbsolutePath());
+//            System.out.println("Read from asset: " + path.getAbsolutePath());
         } else {
             // Load from file
             Scanner scanner = new Scanner(path);

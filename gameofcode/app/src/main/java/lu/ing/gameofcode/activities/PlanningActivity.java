@@ -34,8 +34,8 @@ public class PlanningActivity extends AppCompatActivity {
         setContentView(R.layout.activity_planning);
         ButterKnife.bind(this);
 
-        boolean raining = true;
-        if (RandomUtils.nextInt(0, 100) > 50) {
+        boolean raining = false;
+        if (raining) {
             sunnyLayout.setVisibility(View.GONE);
             rainyLayout.setVisibility(View.VISIBLE);
         } else {

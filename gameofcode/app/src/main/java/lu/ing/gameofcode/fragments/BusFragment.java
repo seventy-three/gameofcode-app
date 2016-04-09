@@ -9,11 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
@@ -24,13 +26,14 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import lu.ing.gameofcode.requests.LineBeansRequest;
-import lu.ing.gameofcode.utils.MySpiceService;
 import lu.ing.gameofcode.R;
-import lu.ing.gameofcode.utils.SharedPreferencesUtils;
-import lu.ing.gameofcode.line.BusStop;
 import lu.ing.gameofcode.line.LineBean;
 import lu.ing.gameofcode.line.LineBeanSorter;
+import lu.ing.gameofcode.requests.LineBeansRequest;
+import lu.ing.gameofcode.services.BusService;
+import lu.ing.gameofcode.services.BusServiceImpl;
+import lu.ing.gameofcode.utils.MySpiceService;
+import lu.ing.gameofcode.utils.SharedPreferencesUtils;
 
 public class BusFragment extends Fragment {
 
@@ -44,6 +47,7 @@ public class BusFragment extends Fragment {
     ProgressBar loadingView;
 
     private SpiceManager spiceManager = new SpiceManager(MySpiceService.class);
+    private BusService busService;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,6 +57,8 @@ public class BusFragment extends Fragment {
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        busService = new BusServiceImpl(getContext());
 
         return rootView;
     }
@@ -84,18 +90,25 @@ public class BusFragment extends Fragment {
         spiceManager.execute(request, new BusLinesRequestListener());
     }
 
-    private void loadBusStops() {
+    private LatLng getCoordinates(final SharedPreferences preferences, final String latProp, final String longProp) {
+
+        return new LatLng(
+                SharedPreferencesUtils.getDouble(preferences, latProp, 0),
+                SharedPreferencesUtils.getDouble(preferences, longProp, 0));
+    }
+
+    private void loadBusStops(final String num) {
         showLoading();
-        
-        RecyclerView.Adapter mAdapter = new MyAdapter(new BusStop[]{
-                createBusStop("Arret 1", "35 min de marche", false),
-                createBusStop("Arret 2", "30 min de marche", false),
-                createBusStop("Arret 3", "25 min de marche", false),
-                createBusStop("Arret 4", "20 min de marche", false),
-                createBusStop("Arret 5", "15 min de marche", true),
-                createBusStop("Arret 6", "10 min de marche", false)
-        });
+
+        SharedPreferences preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        final LatLng home = getCoordinates(preferences, "homeLatitude", "homeLongitude");
+        final LatLng work = getCoordinates(preferences, "workLatitude", "workLongitude");
+        final List<lu.ing.gameofcode.model.BusStop> busStops = busService.getBusStops(num, home, work);
+
+        RecyclerView.Adapter mAdapter = new MyAdapter(busStops);
         mRecyclerView.setAdapter(mAdapter);
+
+        hideLoading();
     }
 
     private void showLoading() {
@@ -108,15 +121,26 @@ public class BusFragment extends Fragment {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 
-    private void setupBusLinesSpinner(List<LineBean> lineBeen) {
+    private void setupBusLinesSpinner(final List<LineBean> lineBeen) {
         Collections.sort(lineBeen, new LineBeanSorter());
         final ArrayAdapter<LineBean> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, lineBeen);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         busLinesSpinner.setAdapter(adapter);
+        busLinesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                loadBusStops(lineBeen.get(position).getNum());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-        private BusStop[] mDataset;
+        private List<lu.ing.gameofcode.model.BusStop> mDataset;
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -129,7 +153,7 @@ public class BusFragment extends Fragment {
             }
         }
 
-        public MyAdapter(BusStop[] myDataset) {
+        public MyAdapter(List<lu.ing.gameofcode.model.BusStop> myDataset) {
             mDataset = myDataset;
         }
 
@@ -143,37 +167,14 @@ public class BusFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            final BusStop busStop = mDataset[position];
-            if (busStop.shouldStopHere()) {
-                holder.mTextView.setText(String.format("%s\n%s", busStop.getName(), busStop.getWalkTimeToWork()));
-            } else {
-                holder.mTextView.setText(busStop.getName());
-            }
+            final lu.ing.gameofcode.model.BusStop busStop = mDataset.get(position);
+            holder.mTextView.setText(busStop.getName());
         }
 
         @Override
         public int getItemCount() {
-            return mDataset.length;
+            return mDataset.size();
         }
-    }
-
-    private BusStop createBusStop(final String name, final String time, final boolean stop) {
-        return new BusStop() {
-            @Override
-            public String getName() {
-                return name;
-            }
-
-            @Override
-            public String getWalkTimeToWork() {
-                return time;
-            }
-
-            @Override
-            public boolean shouldStopHere() {
-                return stop;
-            }
-        };
     }
 
     private class BusLinesRequestListener implements RequestListener<LineBean[]> {
