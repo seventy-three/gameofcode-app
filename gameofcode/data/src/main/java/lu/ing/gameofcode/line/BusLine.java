@@ -150,8 +150,10 @@ public class BusLine {
         LineBean[] items = new LineBean[0];
 
         OkHttpClient client = new OkHttpClient();
-        final String latitudeCleaned = latitude.replaceAll("\\.","");
-        final String longitudeCleaned = longitude.replaceAll("\\.","");
+        final String[] latitudes = latitude.split("\\.");
+        final String[] longitudes = longitude.split("\\.");
+        final String latitudeCleaned = latitudes[0] + latitudes[1].substring(0, 6);
+        final String longitudeCleaned = longitudes[0] + longitudes[1].substring(0, 6);
 
         List<String> stopIdList = getAvailableStopIdList(client, latitudeCleaned, longitudeCleaned);
         if (stopIdList.size()>0) {

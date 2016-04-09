@@ -1,5 +1,6 @@
 package lu.ing.gameofcode;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,7 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.octo.android.robospice.SpiceManager;
@@ -19,6 +22,8 @@ import com.octo.android.robospice.request.listener.RequestListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.Bind;
@@ -38,11 +43,14 @@ public class PlanningActivity extends AppCompatActivity {
     @Bind(R.id.rainy)
     RelativeLayout rainyLayout;
 
+    @Bind(R.id.buslines_sp)
+    Spinner busLinesSpinner;
+
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private SpiceManager spiceManager = new SpiceManager(MySpiceService.class);;
 
-    private boolean raining = true;
+    private boolean raining = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,13 +88,20 @@ public class PlanningActivity extends AppCompatActivity {
         spiceManager.start(this);
 
         // lignes disponibles du point de depart à l'arrivée
-        final BusLine line = new BusLine(this);
+        SharedPreferences preferences = getSharedPreferences("preferences", MODE_PRIVATE);
+
+        final String homeLongitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "homeLongitude", 0));
+        final String homeLatitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "homeLatitude", 0));
+        final String workLongitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "workLongitude", 0));
+        final String workLatitude = Double.toString(SharedPreferencesUtils.getDouble(preferences, "workLatitude", 0));
+
         spiceManager.execute(new SpiceRequest<LineBean[]>(LineBean[].class) {
             @Override
             public LineBean[] loadDataFromNetwork() throws Exception {
                 try {
-                    final LineBean[] startList = line.getAvailableLines("49599457","6132893");
-                    final LineBean[] endList = line.getAvailableLines("49579455","6112891");
+                    final BusLine line = new BusLine(PlanningActivity.this);
+                    final LineBean[] startList = line.getAvailableLines(homeLatitude, homeLongitude);
+                    final LineBean[] endList = line.getAvailableLines(workLatitude, workLongitude);
                     List<LineBean> matchList = new ArrayList<>();
                     for (final LineBean lineS : startList){
                         if(null!=lineS.getNum()) {
@@ -116,8 +131,23 @@ public class PlanningActivity extends AppCompatActivity {
                 for (final LineBean line : lines) {
                     Log.d("MAIN", "getAvailableLines LINE N°"+line.getNum());
                 }
+                setupBusLinesSpinner(Arrays.asList(lines));
             }
         });
+    }
+
+    private class LineBeanSorter implements Comparator<LineBean> {
+        @Override
+        public int compare(LineBean lhs, LineBean rhs) {
+            return lhs.getNum().compareTo(rhs.getNum());
+        }
+    }
+
+    private void setupBusLinesSpinner(List<LineBean> lineBeen) {
+        Collections.sort(lineBeen, new LineBeanSorter());
+        final ArrayAdapter<LineBean> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, lineBeen);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        busLinesSpinner.setAdapter(adapter);
     }
 
     @Override

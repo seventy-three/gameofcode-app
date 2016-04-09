@@ -65,4 +65,9 @@ public class LineBean {
     public void setOperatorCode(String operatorCode) {
         this.operatorCode = operatorCode;
     }
+
+    @Override
+    public String toString() {
+        return "Ligne " + num;
+    }
 }
