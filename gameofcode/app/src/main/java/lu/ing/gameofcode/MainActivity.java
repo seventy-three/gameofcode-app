@@ -90,8 +90,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public LineBean[] loadDataFromNetwork() throws Exception {
                 try {
-                    final LineBean[] startList = line.getAvailableLines("49599457","6132893");
-                    final LineBean[] endList = line.getAvailableLines("49579455","6112891");
+                    final LineBean[] startList = line.getAvailableLines("49.599457","6.132893");
+                    final LineBean[] endList = line.getAvailableLines("49.579455","6.112891");
                     List<LineBean> matchList = new ArrayList<>();
                     for (final LineBean lineS : startList){
                         if(null!=lineS.getNum()) {

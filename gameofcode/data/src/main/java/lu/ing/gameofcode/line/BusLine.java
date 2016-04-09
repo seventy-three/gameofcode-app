@@ -150,8 +150,10 @@ public class BusLine {
         LineBean[] items = new LineBean[0];
 
         OkHttpClient client = new OkHttpClient();
+        final String latitudeCleaned = latitude.replaceAll("\\.","");
+        final String longitudeCleaned = longitude.replaceAll("\\.","");
 
-        List<String> stopIdList = getAvailableStopIdList(client, latitude, longitude);
+        List<String> stopIdList = getAvailableStopIdList(client, latitudeCleaned, longitudeCleaned);
         if (stopIdList.size()>0) {
 
             Request request;
@@ -164,7 +166,7 @@ public class BusLine {
             }.getType();
             gsonBuilder.registerTypeAdapter(LineJsonDataType, new LineJsonDeserializer());
 
-            Map<String, LineBean> mlines = new HashMap<>();
+            final Map<String, LineBean> mlines = new HashMap<>();
             for (final String stopId : stopIdList) {
 
                 request = buildRequestDeparture(stopId);
@@ -174,24 +176,16 @@ public class BusLine {
 
                 // Deserialize HTTP response to concrete type.
                 body = response.body();
-                System.out.println(response.code());
-                if (response.code() == 404) {
-                    AssetFileDescriptor descriptor = context.getAssets().openFd("DepartureMock.json");
-                    charStream = new FileReader(descriptor.getFileDescriptor());
-                } else {
-                    charStream = body.charStream();
-                }
+                charStream = body.charStream();
 
                 final Gson gson = gsonBuilder.create();
                 final List<LineBean> lineList = gson.fromJson(charStream, LineJsonDataType);
                 for (final LineBean line : lineList) {
                     mlines.put(line.getNum(), line);
-                    System.out.println(line.getNum());/**/
                 }
             }
 
             items = Arrays.copyOf(mlines.values().toArray(), mlines.size(), LineBean[].class);
-            System.out.println("   size="+items.length);/**/
         }
 
         return items;
