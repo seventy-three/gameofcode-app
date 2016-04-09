@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.geojson;
 
 import java.beans.Transient;
 import java.io.Serializable;

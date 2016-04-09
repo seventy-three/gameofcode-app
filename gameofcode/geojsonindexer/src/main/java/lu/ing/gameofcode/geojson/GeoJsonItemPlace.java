@@ -1,4 +1,4 @@
-package lu.ing.gameofcode;
+package lu.ing.gameofcode.geojson;
 
 /**
  * Created by patrice on 09.04.16.
