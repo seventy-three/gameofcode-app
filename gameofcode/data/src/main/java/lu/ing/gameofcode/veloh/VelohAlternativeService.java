@@ -22,7 +22,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-public class VelohAlternative {
+public class VelohAlternativeService {
 
     private static final String API_KEY = "9b84de9ed23056f22bb009f57972fa76bf656360";
 
@@ -36,7 +36,7 @@ public class VelohAlternative {
     /**
      * Constructeur.
      */
-    public VelohAlternative() {
+    public VelohAlternativeService() {
     }
 
     /**
@@ -44,7 +44,7 @@ public class VelohAlternative {
      *
      * @param context the context
      */
-    public VelohAlternative(Context context) {
+    public VelohAlternativeService(Context context) {
         this.context = context;
     }
 
@@ -170,7 +170,7 @@ public class VelohAlternative {
      * @throws Exception
      */
     public static void main(String... args) throws Exception {
-        VelohAlternative bl = new VelohAlternative();
+        VelohAlternativeService bl = new VelohAlternativeService();
         System.out.println("dist="+bl.distanceTo("49.579393","6.112815","49.58043","6.11465"));
     }
 }

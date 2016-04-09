@@ -42,7 +42,7 @@ import lu.ing.gameofcode.R;
 import lu.ing.gameofcode.utils.SharedPreferencesUtils;
 import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.LineBean;
-import lu.ing.gameofcode.veloh.VelohAlternative;
+import lu.ing.gameofcode.veloh.VelohAlternativeService;
 import lu.ing.gameofcode.veloh.VelohStationBean;
 
 public class MainActivity extends AppCompatActivity
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        final VelohAlternative veloa = new VelohAlternative(this);
+        final VelohAlternativeService veloa = new VelohAlternativeService(this);
         spiceManager.execute(new SpiceRequest<VelohStationBean[]>(VelohStationBean[].class) {
             @Override
             public VelohStationBean[] loadDataFromNetwork() throws Exception {
