@@ -36,7 +36,7 @@ public class PlanningActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planning);
         ButterKnife.bind(this);
-        
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
@@ -53,8 +53,6 @@ public class PlanningActivity extends AppCompatActivity {
             sunnyLayout.setVisibility(View.VISIBLE);
             rainyLayout.setVisibility(View.GONE);
         }
-
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
