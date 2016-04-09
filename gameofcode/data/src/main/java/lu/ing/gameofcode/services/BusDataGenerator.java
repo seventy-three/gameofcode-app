@@ -64,9 +64,14 @@ public class BusDataGenerator {
         for (GeoJsonData geoJsonData : geoJsonDataList) {
             // Keep only bus lines for now
             if (geoJsonData.getType() == GeoJsonDataType.BUS_LINE) {
-                busData.addLine(interpretBusLine(geoJsonData));
+                BusLine busLine = interpretBusLine(geoJsonData);
+                convertUnits(busLine);
+                busData.addLine(busLine);
             }
         }
+
+
+
     }
 
     public BusLine interpretBusLine(GeoJsonData geoJsonData) {
@@ -189,5 +194,14 @@ public class BusDataGenerator {
         } while(found);
 
         return extracted;
+    }
+
+    public void convertUnits(BusLine busLine) {
+        for (BusStop busStop : busLine.getWay()) {
+            BusPath path = busStop.getPath();
+            path.setTimeBike(UnitsConvertor.distanceToTimeBike(path.getDistance()));
+            path.setTimeFoot(UnitsConvertor.distanceToTimeFoot(path.getDistance()));
+            path.setTimeBus(UnitsConvertor.distanceToTimeBus(path.getDistance()));
+        }
     }
 }

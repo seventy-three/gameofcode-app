@@ -100,7 +100,11 @@ public class GeoJsonParser {
         for (GeoJsonItem item : items) {
             if (item instanceof GeoJsonItemPath) {
                 GeoJsonItemPath path = GeoJsonItemPath.class.cast(item);
-                //for ()
+                path.setDistance(UnitsConvertor.distanceLuxToMeters(path.getDistance()));
+                for (GeoJsonItemPath.GeoJsonItemPoint point : path.getPoints()) {
+                    point.setLatitude(UnitsConvertor.luxLatitudeToGps(point.getLatitude()));
+                    point.setLongitude(UnitsConvertor.luxLongitudeToGps(point.getLongitude()));
+                }
             } else if (item instanceof GeoJsonItemPlace) {
                 // TODO
             }

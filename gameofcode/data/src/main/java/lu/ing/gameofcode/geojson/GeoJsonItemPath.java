@@ -65,8 +65,16 @@ public class GeoJsonItemPath extends GeoJsonItem {
             this.latitude = latitude;
         }
 
+        public void setLongitude(long longitude) {
+            this.longitude = longitude;
+        }
+
         public long getLongitude() {
             return longitude;
+        }
+
+        public void setLatitude(long latitude) {
+            this.latitude = latitude;
         }
 
         public long getLatitude() {

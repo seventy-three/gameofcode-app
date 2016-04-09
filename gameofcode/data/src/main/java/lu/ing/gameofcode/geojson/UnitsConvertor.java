@@ -18,11 +18,15 @@ public class UnitsConvertor {
         return distanceLux / 10000000000L;
     }
 
-    public static long distanceToTimeFoot(long distance) {
-        return (long) (((double) distance) / 0.75d);
+    public static int distanceToTimeFoot(long distance) {
+        return (int) (((double) distance) / 0.75d);
     }
 
-    public static long distanceToTimeBike(long distance) {
-        return (long) (((double) distance) / 8.3d);
+    public static int distanceToTimeBus(long distance) {
+        return (int) (((double) distance) / 14d);
+    }
+
+    public static int distanceToTimeBike(long distance) {
+        return (int) (((double) distance) / 8.3d);
     }
 }
