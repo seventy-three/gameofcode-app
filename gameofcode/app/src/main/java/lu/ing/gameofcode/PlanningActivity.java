@@ -45,7 +45,7 @@ public class PlanningActivity extends AppCompatActivity {
             tabLayout.setupWithViewPager(viewPager);
         }
 
-        boolean raining = false;
+        boolean raining = true;
         if (RandomUtils.nextInt(0, 100) > 50) {
             sunnyLayout.setVisibility(View.GONE);
             rainyLayout.setVisibility(View.VISIBLE);
