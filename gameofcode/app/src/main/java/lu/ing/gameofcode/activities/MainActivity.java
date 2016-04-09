@@ -42,8 +42,8 @@ import lu.ing.gameofcode.R;
 import lu.ing.gameofcode.utils.SharedPreferencesUtils;
 import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.LineBean;
-import lu.ing.gameofcode.line.VelohAlternative;
-import lu.ing.gameofcode.line.VelohStationBean;
+import lu.ing.gameofcode.veloh.VelohAlternative;
+import lu.ing.gameofcode.veloh.VelohStationBean;
 
 public class MainActivity extends AppCompatActivity
         implements

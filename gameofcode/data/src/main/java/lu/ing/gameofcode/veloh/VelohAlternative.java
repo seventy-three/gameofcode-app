@@ -1,7 +1,6 @@
-package lu.ing.gameofcode.line;
+package lu.ing.gameofcode.veloh;
 
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
@@ -9,13 +8,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.maps.android.SphericalUtil;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;

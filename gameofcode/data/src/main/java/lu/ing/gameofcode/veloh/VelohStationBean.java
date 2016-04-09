@@ -1,4 +1,4 @@
-package lu.ing.gameofcode.line;
+package lu.ing.gameofcode.veloh;
 
 /**
  * Created by julien on 09/04/16.
