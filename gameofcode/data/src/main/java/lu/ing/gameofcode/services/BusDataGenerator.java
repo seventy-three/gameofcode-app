@@ -34,7 +34,7 @@ public class BusDataGenerator {
         System.out.println("- Read data from http://opendata.vdl.lu");
         System.out.println("------------------------------------------");
         GeoJsonParser parser = new GeoJsonParser();
-        List<GeoJsonData> jsonData = parser.readData();
+        List<GeoJsonData> jsonData = parser.readData(null);
         System.out.println("------------------------------------------");
         System.out.println("- Generate bus data");
         System.out.println("------------------------------------------");
