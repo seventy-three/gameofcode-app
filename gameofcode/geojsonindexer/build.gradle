@@ -8,4 +8,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.github.MPriess:GeoJSON-POJO:1.0.1'
 }
