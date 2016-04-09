@@ -51,7 +51,7 @@ public class BusLine {
     /**
      * List of operators managed (separeted by comma)
      */
-    private static final String OPERATORS = "AVL";
+    private static final String OPERATORS = "AVL,RGT";
 
     /**
      * Constructeur.

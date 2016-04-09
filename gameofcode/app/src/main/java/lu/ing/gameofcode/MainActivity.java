@@ -31,6 +31,9 @@ import com.octo.android.robospice.request.SpiceRequest;
 import com.octo.android.robospice.request.listener.RequestListener;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -74,29 +77,34 @@ public class MainActivity extends AppCompatActivity
                 .addOnConnectionFailedListener(this)
                 .build();
         googleApiClient.connect();
+    }
 
-        /////////////////////////////////////////////////////
-//        BusLine line = new BusLine(this);
-//        try {
-//            line.getAvailableLines("49599457","6132893");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-        /////////////////////////////////////////////////////
-        /*final OkHttpClient client = new OkHttpClient();
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
 
-        // Create request for remote resource.
-        final Request request = new Request.Builder()
-                .url("http://google.com")
-                .build();*/
-
-        // Execute the request and retrieve the response.
+        // lignes disponibles du point de depart à l'arrivée
         final BusLine line = new BusLine(this);
         spiceManager.execute(new SpiceRequest<LineBean[]>(LineBean[].class) {
             @Override
             public LineBean[] loadDataFromNetwork() throws Exception {
                 try {
-                    return line.getAvailableLines("49599457","6132893");
+                    final LineBean[] startList = line.getAvailableLines("49599457","6132893");
+                    final LineBean[] endList = line.getAvailableLines("49579455","6112891");
+                    List<LineBean> matchList = new ArrayList<>();
+                    for (final LineBean lineS : startList){
+                        if(null!=lineS.getNum()) {
+                            for (final LineBean lineE : endList) {
+                                if (lineS.getNum().equals(lineE.getNum())){
+                                    matchList.add(lineE);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    return Arrays.copyOf(matchList.toArray(), matchList.size(), LineBean[].class);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -105,25 +113,16 @@ public class MainActivity extends AppCompatActivity
         }, new RequestListener<LineBean[]>() {
             @Override
             public void onRequestFailure(SpiceException spiceException) {
-                System.out.println("   getAvailableLines Failure");/**/
                 Log.d("MAIN","getAvailableLines Failure");
             }
             @Override
             public void onRequestSuccess(LineBean[] lines) {
-                System.out.println("   size="+lines.length);/**/
-                Log.d("MAIN","getAvailableLines nb result="+lines.length);
+                Log.d("MAIN","getAvailableLines Success nb matched="+lines.length);
                 for (final LineBean line : lines) {
                     Log.d("MAIN", "getAvailableLines LINE N°"+line.getNum());
                 }
             }
         });
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        spiceManager.start(this);
     }
 
     @Override
