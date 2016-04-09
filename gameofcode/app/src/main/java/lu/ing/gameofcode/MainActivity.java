@@ -39,6 +39,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import lu.ing.gameofcode.line.BusLine;
 import lu.ing.gameofcode.line.LineBean;
+import lu.ing.gameofcode.line.VelohAlternative;
+import lu.ing.gameofcode.line.VelohStationBean;
 
 public class MainActivity extends AppCompatActivity
         implements
@@ -115,6 +117,35 @@ public class MainActivity extends AppCompatActivity
                 Log.d("MAIN","getAvailableLines Success nb matched="+lines.length);
                 for (final LineBean line : lines) {
                     Log.d("MAIN", "getAvailableLines LINE N°"+line.getNum());
+                }
+            }
+        });
+
+        final VelohAlternative veloa = new VelohAlternative(this);
+        spiceManager.execute(new SpiceRequest<VelohStationBean[]>(VelohStationBean[].class) {
+            @Override
+            public VelohStationBean[] loadDataFromNetwork() throws Exception {
+                try {
+                    final VelohStationBean[] stationList = veloa.getAvailableVeloh("49.579393","6.112815");/**/
+
+                    //return Arrays.copyOf(matchList.toArray(), matchList.size(), VelohStationBean[].class);
+                    return stationList;
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }, new RequestListener<VelohStationBean[]>() {
+            @Override
+            public void onRequestFailure(SpiceException spiceException) {
+                Log.d("MAIN","getAvailableVeloh Failure");
+            }
+            @Override
+            public void onRequestSuccess(VelohStationBean[] stations) {
+                Log.d("MAIN","getAvailableVeloh Success nb matched="+stations.length);
+                for (final VelohStationBean station : stations) {
+                    Log.d("MAIN", "getAvailableVeloh N°"+station.getName());
                 }
             }
         });
